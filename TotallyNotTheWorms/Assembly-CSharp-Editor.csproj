@@ -118,7 +118,6 @@
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
-     <None Include="Assets\UVersionControl\README.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
@@ -182,12 +181,6 @@
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>D:/Programy/Unity/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="SVNBackend">
- <HintPath>C:/Users/Zimek/Documents/repozytornia_cactusoft/TotallyNotTheWorms/Assets/UVersionControl/Editor/SVNBackend.dll</HintPath>
- </Reference>
- <Reference Include="UnityVersionControl">
- <HintPath>C:/Users/Zimek/Documents/repozytornia_cactusoft/TotallyNotTheWorms/Assets/UVersionControl/Editor/UnityVersionControl.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
