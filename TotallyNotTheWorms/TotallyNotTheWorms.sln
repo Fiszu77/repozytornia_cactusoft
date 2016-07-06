@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{48C1B188-9551-6435-985D-58EB6207CA56}") = "TotallyNotTheWorms", "Assembly-CSharp-firstpass.csproj", "{CF65A2D1-0BC9-C064-1CE3-54AD6B361025}"
+EndProject
+Project("{48C1B188-9551-6435-985D-58EB6207CA56}") = "TotallyNotTheWorms", "Assembly-CSharp-Editor.csproj", "{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF65A2D1-0BC9-C064-1CE3-54AD6B361025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF65A2D1-0BC9-C064-1CE3-54AD6B361025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF65A2D1-0BC9-C064-1CE3-54AD6B361025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF65A2D1-0BC9-C064-1CE3-54AD6B361025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
