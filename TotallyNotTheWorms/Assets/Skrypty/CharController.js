@@ -18,6 +18,6 @@ function Update () {
 	 GetComponent.<SpriteRenderer>().flipX=true;
 	}
 	if(Input.GetKeyDown("space")) {
-	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*10000);
+	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*1000);
 	}
 }
