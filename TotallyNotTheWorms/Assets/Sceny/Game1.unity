@@ -257,6 +257,14 @@ MonoBehaviour:
   ground_layers:
     serializedVersion: 2
     m_Bits: 4294967039
+  pointsArray:
+  - {x: 0.3, y: 5}
+  - {x: 1.3, y: -3}
+  - {x: 0.7, y: -4.5}
+  - {x: -0.7, y: -4.5}
+  - {x: -1.3, y: -3}
+  - {x: -0.3, y: 5}
+  - {x: 0.3, y: 5}
 --- !u!50 &591635431
 Rigidbody2D:
   serializedVersion: 2
@@ -333,15 +341,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: 0.34697533, y: 4.597995}
-  - {x: 1.6721966, y: -3.4448242}
-  - {x: 1.1607163, y: -4.8293734}
-  - {x: -0.67085266, y: -4.8171105}
-  - {x: -2.260803, y: 0.047976494}
-  - {x: -1.593889, y: 2.8112364}
-  - {x: -3.0198188, y: 4.3211765}
-  - {x: -1.4082967, y: 5.1833878}
-  - {x: 0.34519723, y: 4.622716}
+  - {x: -0.112243295, y: -0.92236996}
+  - {x: -0.75587213, y: 2.658599}
 --- !u!1 &1193841595
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +411,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 1193841595}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2c4e92a49db6cf1438b50595e720f29a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
