@@ -253,10 +253,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   top_left: {fileID: 116685184}
   bottom_right: {fileID: 1937432369}
-  grounded: 0
   ground_layers:
     serializedVersion: 2
     m_Bits: 4294967039
+  cantJumpTimer: 0
+  jump2Timer: 1
+  speedOfMove: 0.2
+  jumpForceUp: 1250
+  jumpForceSide: 1000
+  jumpForceUp2: 2000
+  jumpForceSide2: 1000
+  grounded: 0
+  isJump2: 0
   pointsArray:
   - {x: 0.3, y: 5}
   - {x: 1.3, y: -3}
