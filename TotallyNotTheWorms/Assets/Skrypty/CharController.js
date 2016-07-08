@@ -3,11 +3,12 @@ var top_left : Transform;
 var bottom_right : Transform;
 var grounded : boolean;
 var ground_layers :LayerMask;
-
+var dir: boolean;// true =right, false = left; 
 var pointsArray:Vector2[];
 
 function Start () {
 	GetComponent.<EdgeCollider2D>().points=pointsArray;
+	dir = false;
 }
 
 function FixedUpdate () {
@@ -15,6 +16,7 @@ function FixedUpdate () {
 	//GetComponent.<Rigidbody2D>().AddForce(Vector2.down*10);
 	if(Input.GetKey("a")) {
 	 GetComponent.<SpriteRenderer>().flipX=false;
+	 dir = false;
 	 //GetComponent.<Rigidbody2D>().AddForce(Vector2.left*10);
 	 if (grounded)
 	  transform.Translate(-0.1,0,0*Time.deltaTime);
@@ -23,6 +25,7 @@ function FixedUpdate () {
 	  }
 	if(Input.GetKey("d")) {
 	 GetComponent.<SpriteRenderer>().flipX=true;
+	 dir = true;
 	 //GetComponent.<Rigidbody2D>().AddForce(Vector2.right*10);
 	 if (grounded)
 	  transform.Translate(0.1,0,0*Time.deltaTime);
@@ -31,9 +34,18 @@ function FixedUpdate () {
 	}
 	if(Input.GetKeyDown("space") && grounded == true){
 	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*1100);
-	 	/*if(Input.GetKey("d")) 
-	 	GetComponent.<Rigidbody2D>().AddForce(Vector2.right*500);
-	 	if(Input.GetKey("a")) 
-	 	GetComponent.<Rigidbody2D>().AddForce(Vector2.left*500);*/
+	 	
 	}
+
+
+	if(Input.GetKeyDown("backspace")&& grounded) {
+	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*1600);
+		if (!dir)
+			GetComponent.<Rigidbody2D>().AddForce(Vector2.right *220);
+		else
+			GetComponent.<Rigidbody2D>().AddForce(Vector2.left *220);
+	}
+
 }
+
+
