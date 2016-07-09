@@ -72,7 +72,6 @@ function FixedUpdate () {
 	  jump2Timer=0;
 	 }
 	}
-
 }
 
 
