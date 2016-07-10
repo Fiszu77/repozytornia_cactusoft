@@ -366,6 +366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instantiatepos: {fileID: 623760086}
   bomb: {fileID: 5057290, guid: c886cfdda8e091747af211a12164ef4f, type: 2}
+  mouseposx: 0
+  mouseposy: 0
 --- !u!1 &623760085
 GameObject:
   m_ObjectHideFlags: 0
