@@ -15,13 +15,13 @@ if(Input.GetKeyDown(KeyCode.E)){
 
 clone= Instantiate(bomb,transform.position, Quaternion.identity);
 if(GetComponent.<SpriteRenderer>().flipX) {
-clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*mouseposx*100);
-clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*mouseposy*-100);
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*mouseposx*10);
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*mouseposy*-10);
 clone.transform.Translate(3,0,0);
 }
 if(!GetComponent.<SpriteRenderer>().flipX){ 
-clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*mouseposx*100);
-clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*mouseposy*-100);
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*mouseposx*10);
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*mouseposy*-10);
 clone.transform.Translate(-3,0,0);
 }
 //clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*Shoot.mouseposx*100);
