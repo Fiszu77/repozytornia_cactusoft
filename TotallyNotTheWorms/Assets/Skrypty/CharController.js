@@ -2,6 +2,8 @@
 var top_left : Transform;
 var bottom_right : Transform;
 
+var legs : GameObject[];
+
 var ground_layers :LayerMask;
 
 var cantJumpTimer : float;
@@ -16,7 +18,7 @@ var jumpForceSide2 : int;
 
 var grounded : boolean;
 var isJump2 : boolean;
-var jump:boolean=false;
+var jump : boolean=false;
 
 var pointsArray:Vector2[];
 
@@ -41,11 +43,20 @@ function FixedUpdate () {
 //ruch w lewo i prawo
 	if(Input.GetKey(KeyCode.A) && grounded) {
 	 GetComponent.<SpriteRenderer>().flipX=false;
+	 legs[0].GetComponent.<SpriteRenderer>().flipX=false;
+	 legs[1].GetComponent.<SpriteRenderer>().flipX=false;
 	 transform.Translate(-speedOfMove,0,0*Time.deltaTime);
+	 GetComponent.<Animation>().Play("legs");
 	}
 	if(Input.GetKey(KeyCode.D) && grounded) {
 	 GetComponent.<SpriteRenderer>().flipX=true;
+	 legs[0].GetComponent.<SpriteRenderer>().flipX=true;
+	 legs[1].GetComponent.<SpriteRenderer>().flipX=true;
 	 transform.Translate(speedOfMove,0,0*Time.deltaTime);
+	 GetComponent.<Animation>().Play("legs");
+	}
+	if(Input.anyKey==false) {
+	 GetComponent.<Animation>().Stop("legs");
 	}
 //skok
 	if(Input.GetKeyDown(KeyCode.Space) && grounded && cantJumpTimer>=1){
