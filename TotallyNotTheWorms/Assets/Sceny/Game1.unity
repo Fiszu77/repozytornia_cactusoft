@@ -215,6 +215,7 @@ MonoBehaviour:
   outlineRenderers:
   - {fileID: 1193841596}
   - {fileID: 591635432}
+  - {fileID: 0}
   outlineRendererColors: 
   eraseRenderers: []
   lineThickness: 2
