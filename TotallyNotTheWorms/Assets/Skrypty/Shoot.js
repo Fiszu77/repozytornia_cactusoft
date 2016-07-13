@@ -1,5 +1,5 @@
 ﻿#pragma strict
-var instantiatepos : Transform;
+
 var bomb : Rigidbody2D;
 var clone : Rigidbody2D;
 
