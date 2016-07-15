@@ -494,7 +494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866c9e8d3df3b7e45ab6deadc2b1a8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiatepos: {fileID: 0}
   bomb: {fileID: 5057290, guid: c886cfdda8e091747af211a12164ef4f, type: 2}
   clone: {fileID: 0}
   mouseposx: 0
