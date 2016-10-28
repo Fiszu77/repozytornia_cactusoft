@@ -77,7 +77,7 @@ function FixedUpdate () {
 	 jump=false;
 	 DblClckTimer=0;
 	}
-	if(Input.GetKeyDown(KeyCode.Space) && DblClckTimer<=0.2 && DblClckTimer>0) {
+	if(Input.GetKeyDown(KeyCode.Space) && DblClckTimer<=0.2 && DblClckTimer>0 && jump==true) {
 	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*jumpForceUp2);
 	 jump=false;
 	 DblClckTimer=0;
