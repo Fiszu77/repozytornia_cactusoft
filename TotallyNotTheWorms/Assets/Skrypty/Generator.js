@@ -9,25 +9,36 @@ var atomRightTrans:Transform;
 var atomLeftTrans:Transform;
 var atomTopTrans:Transform;
 var atomBottomTrans:Transform;
+var groundTrans:Transform;
 
 var x:int;
+var i:int;
 var h:int;
 var n:int;
 
 function Start () {
 	h=Random.Range(0,6);
 	n=Random.Range(0,2);
-	for (x=0; x<30; x++) {
+	//(poziom -> h.n)
+	for (i=0; i<10; i++) {
+
+	if(h==0) {
+	  if(n==0) {
+	    Down();
+	  }
+	 }
+
+	for (x=0; x<2; x++) {
 	 switch(h) {
-	  case 0://
-	   if(n==0) {
+	  case 0://Połowa atomu (poziom 0)
+	   if(n==0) {//Lewa połowa atomu (poziom 0.0)
 	    print("0.0");
 	    GenAtomHlfLeft();
 	    Next();
 		h=0;
 	    n=1;
 	   }
-	   if(n==1) {
+	   if(n==1) {//Prawa połowa atomu (poziom 0.1)
 	    print("0.1");
 	    GenAtomHlfRight();
 	    Next();
@@ -35,7 +46,7 @@ function Start () {
 	    n=0;
 	   }
 	  break;
-	  case 1:
+	  case 1://Cały 1 atom (poziom 1)
 	   print("1");
 	   GenAtom();
 	   Next();
@@ -48,7 +59,7 @@ function Start () {
 	   }
 	  break;
 	  case 2:
-	   if(n==0) {
+	   if(n==0) {//Cały 1 atom i lewa połowa (poziom 2.0)
 	    print("2.0");
 	    GenAtom();
 	    GenNxtAtomHlfLeft();
@@ -61,7 +72,7 @@ function Start () {
 	     n=1;
 	    }
 	   }
-	   if(n==1) {
+	   if(n==1) {//Cały 1 atom i prawa połowa (poziom 2.1)
 	    print("2.1");
 	    GenAtom();
 	    GenNxtAtomHlfRight();
@@ -75,7 +86,7 @@ function Start () {
 	    }
 	   }
 	  break;
-	  case 3:
+	  case 3://Całe 2 atomy
 	   print("3");
 	   GenAtom();
 	   GenNxtAtom();
@@ -88,7 +99,7 @@ function Start () {
 	    n=1;
 	   }
 	  break;
-	  case 4:
+	  case 4://Całe 2 atomy i lewa połowa
 	   if(n==0) {
 	    print("4.0");
 	    GenAtom();
@@ -103,7 +114,7 @@ function Start () {
 	     n=1;
 	    }
 	   }
-	   if(n==1) {
+	   if(n==1) {//Całe 2 atomy i prawa połowa
 	    print("4.1");
 	    GenAtom();
 	    GenNxtAtom();
@@ -115,7 +126,7 @@ function Start () {
 	    }
 	   }
 	  break;
-	  case 5:
+	  case 5://Całe 3 atomy
 	   print("5");
 	   GenAtom();
 	   GenNxtAtom();
@@ -126,6 +137,7 @@ function Start () {
 	    n=0;
 	   }
 	  break;
+	  }
 	 }
 	}
 }
@@ -181,4 +193,11 @@ function Next () {
 	atomLeftTrans.position.y=0;
 	atomTopTrans.position.y=0;
 	atomBottomTrans.position.y=0;
+}
+
+function Down () {
+	groundTrans.position.y-=2.5;
+	groundTrans.position.y-=2.5;
+	groundTrans.position.y-=2.5;
+	groundTrans.position.y-=2.5;
 }
