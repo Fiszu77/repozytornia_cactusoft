@@ -609,6 +609,8 @@ MonoBehaviour:
   i: 0
   h: 0
   n: 0
+  dOrNoD: 0
+  fOrFh: 0
 --- !u!114 &439302989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,7 +753,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591635429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 27.6, z: 0}
+  m_LocalPosition: {x: 0, y: 63.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1089,7 +1091,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: -0.18}
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 8
 --- !u!58 &1465847166
 CircleCollider2D:
   m_ObjectHideFlags: 0
