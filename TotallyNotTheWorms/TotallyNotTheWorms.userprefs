@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\generator.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Shoot.js">
     <Files>
-      <File FileName="Assets\Skrypty\generator.js" Line="146" Column="85" />
+      <File FileName="Assets\Skrypty\generator.js" Line="6" Column="22" />
       <File FileName="Assets\Skrypty\CharController.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Bomb2.js" Line="1" Column="1" />
-      <File FileName="Assets\Skrypty\Shoot.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\Shoot.js" Line="16" Column="3" />
       <File FileName="Assets\Skrypty\Bomb.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\B.js" Line="1" Column="1" />
     </Files>
