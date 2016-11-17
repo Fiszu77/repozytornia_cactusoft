@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\generator.js">
     <Files>
-      <File FileName="Assets\Skrypty\generator.js" Line="231" Column="15" />
+      <File FileName="Assets\Skrypty\generator.js" Line="266" Column="28" />
       <File FileName="Assets\Skrypty\CharController.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Bomb2.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Shoot.js" Line="1" Column="1" />

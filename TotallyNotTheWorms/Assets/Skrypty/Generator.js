@@ -17,6 +17,7 @@ var h:int;
 var n:int;
 var dOrNoD:int;
 var fOrFh:int;
+var uOrNou:int;
 
 function Start () {
 	h=Random.Range(0,6);
@@ -30,10 +31,11 @@ function Start () {
 	   if(n==0) {//Lewa połowa atomu (poziom 0.0)
 	    print("0.0");
 	    GenAtomHlfLeft();
+	    GenUnder();
 	    dOrNoD=Random.Range(0,2);
 	    switch(dOrNoD) {//Lecimy w dół czy nie?
 	     case 0://Lecimy w dół
-	      GenUnder();
+	      //GenUnder();
 	      Down();
 	      fOrFh=Random.Range(0,2);
 	      switch(fOrFh) {//Następnie 5 czy 4.1?
@@ -47,7 +49,7 @@ function Start () {
 	      }
 	     break;
 	     case 1://Nie lecimy w dół
-	      GenUnder();
+	      //GenUnder();
 	      Next();
 	      h=0;
 	      n=1;
@@ -142,10 +144,20 @@ function Start () {
 	    GenNxtAtom();
 	    GenNxtAtomHlfRight();
 	    GenUnder();
-	    Next();
-	    h=Random.Range(4,6);
-	    if(h==4) {
-	     n=0;
+	    uOrNou=Random.Range(0,2);
+	    switch(uOrNou) {
+	     case 0:
+	      h=0;
+	      n=1;
+	      Up();
+	     break;
+	     case 1:
+	      h=Random.Range(4,6);
+	      if(h==4) {
+	       n=0;
+	       Next();
+	      }
+	     break;
 	    }
 	   }
 	  break;
@@ -155,10 +167,20 @@ function Start () {
 	   GenNxtAtom();
 	   GenNxtAtom();
 	   GenUnder();
-	   Next();
-	   h=Random.Range(4,6);
-	   if(h==4) {
-	    n=0;
+	   uOrNou=Random.Range(0,2);
+	   switch(uOrNou) {
+	    case 0:
+	     h=0;
+	     n=1;
+	     Up();
+	    break;
+	    case 1:
+	     h=Random.Range(4,6);
+	     if(h==4) {
+	      n=0;
+	      Next();
+	     }
+	    break;
 	   }
 	  break;
 	  }
@@ -224,13 +246,26 @@ function Down () {
 	groundTrans.position.y-=7.5;
 	groundTrans.position.x+=2.5;
 }
+
+function Up () {
+	atomRightTrans.localPosition.y=0;
+	atomLeftTrans.localPosition.y=0;
+	atomTopTrans.localPosition.y=0;
+	atomBottomTrans.localPosition.y=0;
+	groundTrans.position.y+=7.5;
+	groundTrans.position.x+=2.5;
+}
+
 function GenUnder () {
 	var m:int;
-	groundTrans.position.y-=7.5;
+	groundTrans.position.y-=55;
 	GenAtom();
 	for(m=0; m<21; m++) {
 	GenNxtAtom();
 	}
-	groundTrans.position.y+=7.5;
-		
+	groundTrans.position.y+=55;
+	atomRightTrans.localPosition.y=0;
+	atomLeftTrans.localPosition.y=0;
+	atomTopTrans.localPosition.y=0;
+	atomBottomTrans.localPosition.y=0;
 }
