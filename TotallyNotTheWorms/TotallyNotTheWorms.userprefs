@@ -1,25 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Shoot.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\generator.js">
     <Files>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <File FileName="Assets\Skrypty\generator.js" Line="266" Column="28" />
-=======
-<<<<<<< HEAD
-      <File FileName="Assets\Skrypty\generator.js" Line="6" Column="22" />
-=======
-      <File FileName="Assets\Skrypty\generator.js" Line="231" Column="15" />
->>>>>>> 170debea31b2ce0415d590e003d6598da0fd8eca
->>>>>>> be8510b12c0eec890e78064512587afb7645ac93
-      <File FileName="Assets\Skrypty\CharController.js" Line="1" Column="1" />
-      <File FileName="Assets\Skrypty\Bomb2.js" Line="1" Column="1" />
-      <File FileName="Assets\Skrypty\Shoot.js" Line="16" Column="3" />
-      <File FileName="Assets\Skrypty\Bomb.js" Line="1" Column="1" />
-      <File FileName="Assets\Skrypty\B.js" Line="1" Column="1" />
-=======
-      <File FileName="Assets\Skrypty\Shoot.js" Line="27" Column="154" />
->>>>>>> 8f42d628e53af2533b6a078c51ae8bef4c581e18
+      <File FileName="Assets\Skrypty\generator.js" Line="207" Column="8" />
+      <File FileName="Assets\Skrypty\Bomb.js" Line="17" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
