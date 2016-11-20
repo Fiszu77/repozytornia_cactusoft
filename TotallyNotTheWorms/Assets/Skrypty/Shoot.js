@@ -24,12 +24,12 @@ if(!GetComponent.<SpriteRenderer>().flipX){
 }
 
 if(Input.GetKey(KeyCode.LeftShift)){
-if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 270)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95)){
+if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 280)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95)){
 power.transform.Rotate(Vector3.back * Time.deltaTime*15);
 }
 }
 if(Input.GetKey(KeyCode.LeftControl)){
-if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 265)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 90)){
+if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 90)){
 power.transform.Rotate(Vector3.forward* Time.deltaTime*15);
 }
 }
@@ -39,14 +39,16 @@ if(Input.GetKeyDown(KeyCode.E)){
 
 clone= Instantiate(bomb,transform.position, Quaternion.identity);
 if(GetComponent.<SpriteRenderer>().flipX) {
-clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*mouseposx*10);
-clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*mouseposy*-10);
 clone.transform.Translate(3,0,0);
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((270-power.transform.eulerAngles.z)*30));
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((360-power.transform.eulerAngles.z)*30));
+
 }
 if(!GetComponent.<SpriteRenderer>().flipX){ 
-clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*mouseposx*10);
-clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*mouseposy*-10);
 clone.transform.Translate(-3,0,0);
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((270-power.transform.eulerAngles.z)*-30));
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((360-power.transform.eulerAngles.z)*30));
+
 }
 }
 
