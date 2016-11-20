@@ -4,6 +4,7 @@ var atomPrefabLeft:GameObject;
 var atomPrefabRight:GameObject;
 var atomPrefabTop:GameObject;
 var atomPrefabBottom:GameObject;
+var clone:GameObject;
 
 var atomRightTrans:Transform;
 var atomLeftTrans:Transform;
@@ -18,6 +19,8 @@ var n:int;
 var dOrNoD:int;
 var fOrFh:int;
 var uOrNou:int;
+var uX2OrNo:int;
+var dX2OrNo:int;
 
 function Start () {
 	h=Random.Range(0,6);
@@ -168,11 +171,17 @@ function Start () {
 	   GenNxtAtom();
 	   GenUnder();
 	   uOrNou=Random.Range(0,2);
+	   uX2OrNo=Random.Range(0,2);
 	   switch(uOrNou) {
 	    case 0:
 	     h=0;
 	     n=1;
 	     Up();
+	     if(uX2OrNo==0) {
+	      GenAtomHlfRight();
+	      GenUnder();
+	      Up();
+	     }
 	    break;
 	    case 1:
 	     h=Random.Range(4,6);
@@ -189,10 +198,14 @@ function Start () {
 }
 //klasy
 function GenAtom () {
-	Instantiate(atomPrefabLeft,atomRightTrans.position,atomRightTrans.rotation);
-    Instantiate(atomPrefabBottom,atomBottomTrans.position,atomBottomTrans.rotation);
-	Instantiate(atomPrefabRight,atomLeftTrans.position,atomLeftTrans.rotation);
-	Instantiate(atomPrefabTop,atomTopTrans.position,atomTopTrans.rotation);
+	clone=Instantiate(atomPrefabLeft,atomRightTrans.position,atomRightTrans.rotation);
+	clone.GetComponent.<Renderer>().material.color=Color(Random.Range(0.0,1), Random.Range(0.0,1), Random.Range(0.0,1), 1);
+    clone=Instantiate(atomPrefabBottom,atomBottomTrans.position,atomBottomTrans.rotation);
+    clone.GetComponent.<Renderer>().material.color=Color(Random.Range(0.0,1), Random.Range(0.0,1), Random.Range(0.0,1), 1);
+	clone=Instantiate(atomPrefabRight,atomLeftTrans.position,atomLeftTrans.rotation);
+	clone.GetComponent.<Renderer>().material.color=Color(Random.Range(0.0,1), Random.Range(0.0,1), Random.Range(0.0,1), 1);
+	clone=Instantiate(atomPrefabTop,atomTopTrans.position,atomTopTrans.rotation);
+
 }
 
 function GenNxtAtom () {
@@ -200,10 +213,14 @@ function GenNxtAtom () {
 	atomBottomTrans.localPosition.y+=2.5;
 	atomLeftTrans.localPosition.y+=2.5;
 	atomTopTrans.localPosition.y+=2.5;
-	Instantiate(atomPrefabLeft,atomRightTrans.position,atomRightTrans.rotation);
-	Instantiate(atomPrefabBottom,atomBottomTrans.position,atomBottomTrans.rotation);
-	Instantiate(atomPrefabRight,atomLeftTrans.position,atomLeftTrans.rotation);
-	Instantiate(atomPrefabTop,atomTopTrans.position,atomTopTrans.rotation);
+	clone=Instantiate(atomPrefabLeft,atomRightTrans.position,atomRightTrans.rotation);
+	clone.GetComponent.<Renderer>().material.color=Color(Random.Range(0.0,1), Random.Range(0.0,1), Random.Range(0.0,1), 1);
+	clone=Instantiate(atomPrefabBottom,atomBottomTrans.position,atomBottomTrans.rotation);
+	clone.GetComponent.<Renderer>().material.color=Color(Random.Range(0.0,1), Random.Range(0.0,1), Random.Range(0.0,1), 1);
+	clone=Instantiate(atomPrefabRight,atomLeftTrans.position,atomLeftTrans.rotation);
+	clone.GetComponent.<Renderer>().material.color=Color(Random.Range(0.0,1), Random.Range(0.0,1), Random.Range(0.0,1), 1);
+	clone=Instantiate(atomPrefabTop,atomTopTrans.position,atomTopTrans.rotation);
+	clone.GetComponent.<Renderer>().material.color=Color(Random.Range(0.0,1), Random.Range(0.0,1), Random.Range(0.0,1), 1);
 }
 
 function GenAtomHlfLeft () {
