@@ -40,15 +40,25 @@ if(Input.GetKeyDown(KeyCode.E)){
 clone= Instantiate(bomb,transform.position, Quaternion.identity);
 if(GetComponent.<SpriteRenderer>().flipX) {
 clone.transform.Translate(3,0,0);
+if (power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275){
 clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((270-power.transform.eulerAngles.z)*30));
 clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((360-power.transform.eulerAngles.z)*30));
-
+}
+if (power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95){
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((90-power.transform.eulerAngles.z)*-30));
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*30));
+}
 }
 if(!GetComponent.<SpriteRenderer>().flipX){ 
 clone.transform.Translate(-3,0,0);
+if (power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275){
 clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((270-power.transform.eulerAngles.z)*-30));
 clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((360-power.transform.eulerAngles.z)*30));
-
+}
+if (power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95){
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((90-power.transform.eulerAngles.z)*30));
+clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*30));
+}
 }
 }
 
