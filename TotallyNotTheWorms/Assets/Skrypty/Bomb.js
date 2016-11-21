@@ -11,11 +11,11 @@ function Update () {
 }
 
 function OnTriggerStay2D (other:Collider2D) {
-	if(other.CompareTag("atom")) {
-	 if(timer>=5) {
+	if(timer>=5) {
+	 if(other.CompareTag("atom")) {
 	  other.gameObject.SetActive (false);
-	  Destroy(gameObject);
 	  print("coll");
 	 }
+	 Destroy(gameObject);
 	}
 }

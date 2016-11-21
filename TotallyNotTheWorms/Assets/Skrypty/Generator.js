@@ -195,6 +195,10 @@ function Start () {
 	  }
 	 }
 	}
+	atomPrefabLeft.SetActive(false);
+	atomPrefabRight.SetActive(false);
+	atomPrefabTop.SetActive(false);
+	atomPrefabBottom.SetActive(false);
 }
 //klasy
 function GenAtom () {
