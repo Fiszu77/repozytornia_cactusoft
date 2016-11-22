@@ -26,7 +26,7 @@ function Start () {
 	h=Random.Range(0,6);
 	n=Random.Range(0,2);
 	//(poziom -> h.n)
-	for (i=0; i<20; i++) {
+	for (i=0; i<38; i++) {
 
 	for (x=0; x<2; x++) {
 	 switch(h) {

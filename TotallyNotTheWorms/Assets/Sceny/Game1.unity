@@ -666,6 +666,7 @@ GameObject:
   - 68: {fileID: 591635434}
   - 114: {fileID: 591635435}
   - 111: {fileID: 591635436}
+  - 61: {fileID: 591635437}
   m_Layer: 8
   m_Name: Character
   m_TagString: Player
@@ -693,9 +694,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   cantJumpTimer: 0
-  jump2Timer: 1
   speedOfMove: 0.2
-  DblClckTimer: 0
+  jumpTimer: 0
   jumpForceUp: 1250
   jumpForceSide: 1000
   jumpForceUp2: 2000
@@ -826,6 +826,20 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!61 &591635437
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591635429}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -4}
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
 --- !u!1 &1134121474
 GameObject:
   m_ObjectHideFlags: 0
