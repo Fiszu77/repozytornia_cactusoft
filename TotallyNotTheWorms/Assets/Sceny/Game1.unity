@@ -577,7 +577,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 439302981}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
   m_Name: 
@@ -612,11 +612,14 @@ MonoBehaviour:
   atomPrefabTop: {fileID: 1134121474}
   atomPrefabBottom: {fileID: 110941940}
   clone: {fileID: 0}
+  terrainDestroyer: {fileID: 1000011694895586, guid: 170e5616addfa0e46b3e560029b37f9e,
+    type: 2}
   atomRightTrans: {fileID: 1936026270}
   atomLeftTrans: {fileID: 412084609}
   atomTopTrans: {fileID: 1134121477}
   atomBottomTrans: {fileID: 110941943}
   groundTrans: {fileID: 1480803337}
+  tDPos: {x: 0, y: 0}
   x: 0
   i: 0
   h: 0
@@ -626,6 +629,7 @@ MonoBehaviour:
   uOrNou: 0
   uX2OrNo: 0
   dX2OrNo: 0
+  nOfTD: 0
 --- !u!114 &439302989
 MonoBehaviour:
   m_ObjectHideFlags: 0
