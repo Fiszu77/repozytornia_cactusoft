@@ -38,7 +38,7 @@ power.transform.Rotate(Vector3.forward* Time.deltaTime*15);
 //print(power.transform.eulerAngles.z);
 
 if(Input.GetKey(KeyCode.E)){
-timer +=Time.deltaTime;
+timer +=Time.deltaTime*0.5;
 print(timer);
 
 }

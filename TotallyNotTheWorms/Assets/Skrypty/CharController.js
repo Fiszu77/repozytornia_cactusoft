@@ -3,6 +3,7 @@ var top_left : Transform;
 var bottom_right : Transform;
 
 var legs : GameObject[];
+var tekstura : GameObject;
 
 var ground_layers :LayerMask;
 
@@ -41,28 +42,28 @@ function FixedUpdate () {
 	}
 //ruch w lewo i prawo
 	if(Input.GetKey(KeyCode.A) && grounded) {
-	 GetComponent.<SpriteRenderer>().flipX=false;
+	 tekstura.GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=false;
 	 transform.Translate(-speedOfMove,0,0*Time.deltaTime);
-	 GetComponent.<Animation>().Play("legs");
+	 tekstura.GetComponent.<Animation>().Play("legs");
 	}
 	if(Input.GetKey(KeyCode.D) && grounded) {
-	 GetComponent.<SpriteRenderer>().flipX=true;
+	 tekstura.GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=true;
 	 transform.Translate(speedOfMove,0,0*Time.deltaTime);
-	 GetComponent.<Animation>().Play("legs");
+	 tekstura.GetComponent.<Animation>().Play("legs");
 	}
 	if(Input.anyKey==false) {
-	 GetComponent.<Animation>().Stop("legs");
+	 tekstura.GetComponent.<Animation>().Stop("legs");
 	}
 //skok
 	if(Input.GetKeyDown(KeyCode.Space) && grounded && cantJumpTimer>=1){
 	 jump=true;
 	 cantJumpTimer=0;
 	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*jumpForceUp);
-	 if(!GetComponent.<SpriteRenderer>().flipX) { //jeśli jest odwrócony w lewo to skacz w lewo
+	 if(!tekstura.GetComponent.<SpriteRenderer>().flipX) { //jeśli jest odwrócony w lewo to skacz w lewo
 	  GetComponent.<Rigidbody2D>().AddForce(Vector2.left*jumpForceSide);
 	 }
 	 else { //jeśli nie to w prawo
@@ -76,10 +77,11 @@ function FixedUpdate () {
 	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*jumpForceUp2);
 	}
 	 if(jumpTimer>=0.8) {
-	  if(!GetComponent.<SpriteRenderer>().flipX) { //jeśli jest odwrócony w lewo to skacz w prawo
+	  if(!tekstura.GetComponent.<SpriteRenderer>().flipX) { //jeśli jest odwrócony w lewo to skacz w prawo
 	   GetComponent.<Rigidbody2D>().AddForce(Vector2.right*jumpForceSide2);
 	   jumpTimer=0;
 	   isJump2=false;
+	   tekstura.GetComponent.<Animation>().Play("jumpr");
 	  }
 	  else { //jeśli nie to w lewo
 	   GetComponent.<Rigidbody2D>().AddForce(Vector2.left*jumpForceSide2);
