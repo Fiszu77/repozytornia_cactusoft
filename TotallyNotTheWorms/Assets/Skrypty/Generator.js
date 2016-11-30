@@ -5,12 +5,15 @@ var atomPrefabRight:GameObject;
 var atomPrefabTop:GameObject;
 var atomPrefabBottom:GameObject;
 var clone:GameObject;
+var terrainDestroyer:GameObject;
 
 var atomRightTrans:Transform;
 var atomLeftTrans:Transform;
 var atomTopTrans:Transform;
 var atomBottomTrans:Transform;
 var groundTrans:Transform;
+
+var tDPos:Vector2;
 
 var x:int;
 var i:int;
@@ -21,6 +24,7 @@ var fOrFh:int;
 var uOrNou:int;
 var uX2OrNo:int;
 var dX2OrNo:int;
+var nOfTD:int;
 
 function Start () {
 	h=Random.Range(0,6);
@@ -199,6 +203,11 @@ function Start () {
 	atomPrefabRight.SetActive(false);
 	atomPrefabTop.SetActive(false);
 	atomPrefabBottom.SetActive(false);
+	nOfTD=Random.Range(10,25);
+	for(x=0; x<nOfTD; x++) {
+	 tDPos=Vector2(Random.Range(0,200),Random.Range(-50,25));
+	 Instantiate(terrainDestroyer,tDPos,Quaternion.identity);
+	}
 }
 //klasy
 function GenAtom () {
@@ -279,12 +288,12 @@ function Up () {
 
 function GenUnder () {
 	var m:int;
-	groundTrans.position.y-=55;
+	groundTrans.position.y-=70;
 	GenAtom();
-	for(m=0; m<21; m++) {
+	for(m=0; m<27; m++) {
 	GenNxtAtom();
 	}
-	groundTrans.position.y+=55;
+	groundTrans.position.y+=70;
 	atomRightTrans.localPosition.y=0;
 	atomLeftTrans.localPosition.y=0;
 	atomTopTrans.localPosition.y=0;

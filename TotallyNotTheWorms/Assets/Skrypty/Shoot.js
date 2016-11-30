@@ -27,12 +27,12 @@ if(!GetComponent.<SpriteRenderer>().flipX){
 
 if(Input.GetKey(KeyCode.LeftShift)){
 if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 280)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95)){
-power.transform.Rotate(Vector3.back * Time.deltaTime*15);
+power.transform.Rotate(Vector3.back * Time.deltaTime*50);
 }
 }
 if(Input.GetKey(KeyCode.LeftControl)){
 if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 90)){
-power.transform.Rotate(Vector3.forward* Time.deltaTime*15);
+power.transform.Rotate(Vector3.forward* Time.deltaTime*50);
 }
 }
 //print(power.transform.eulerAngles.z);
