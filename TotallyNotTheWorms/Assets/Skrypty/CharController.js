@@ -87,6 +87,7 @@ function FixedUpdate () {
 	   GetComponent.<Rigidbody2D>().AddForce(Vector2.left*jumpForceSide2);
 	   jumpTimer=0;
 	   isJump2=false;
+	   tekstura.GetComponent.<Animation>().Play("jumpl");
 	  }
 	}
 }

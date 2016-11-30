@@ -805,7 +805,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591635429}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 866c9e8d3df3b7e45ab6deadc2b1a8bd, type: 3}
   m_Name: 
@@ -856,6 +856,7 @@ GameObject:
   - 4: {fileID: 759837637}
   - 111: {fileID: 759837639}
   - 212: {fileID: 759837638}
+  - 114: {fileID: 759837640}
   m_Layer: 0
   m_Name: Tekstura
   m_TagString: Untagged
@@ -872,7 +873,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -331.20715}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -196.35818}
   m_Children:
   - {fileID: 201341764}
   - {fileID: 222907665}
@@ -923,10 +924,29 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: b8b912947b1329c4aa056554fdc45179, type: 2}
   - {fileID: 7400000, guid: 4f6617f97d16c3d41b066f77201db94c, type: 2}
+  - {fileID: 7400000, guid: 93ea60aa21d986b4785c773cd90a0417, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &759837640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 759837636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866c9e8d3df3b7e45ab6deadc2b1a8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomb: {fileID: 50000011797142286, guid: 5cb76ddd7a9449e4492e11f82d52ee4c, type: 2}
+  clone: {fileID: 0}
+  power: {fileID: 1865879254}
+  timer: 0
+  mouseposx: 0
+  mouseposy: 0
+  mn: 0
 --- !u!1 &1134121474
 GameObject:
   m_ObjectHideFlags: 0
