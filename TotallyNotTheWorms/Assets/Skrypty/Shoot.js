@@ -3,6 +3,7 @@
 var bomb : Rigidbody2D;
 var clone : Rigidbody2D;
 var power : Transform;//celownik
+var arm : Transform;//Ręka
 var timer : float;//czas trzymania-siła
 var mouseposx : float;
 var mouseposy : float;//pozycja myszki względem postaci
@@ -26,14 +27,20 @@ if(!GetComponent.<SpriteRenderer>().flipX){
 
 
 if(Input.GetKey(KeyCode.LeftShift)){
-if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 280)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95)){
-power.transform.Rotate(Vector3.back * Time.deltaTime*50);
-}
+ if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 280)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95)){
+  power.transform.Rotate(Vector3.back * Time.deltaTime*50);
+ }
+ if (arm.transform.eulerAngles.z <360 && arm.transform.eulerAngles.z > 280||arm.transform.eulerAngles.z > 35  && arm.transform.eulerAngles.z < -130){
+  arm.transform.Rotate(Vector3.back * Time.deltaTime*50);
+ }
 }
 if(Input.GetKey(KeyCode.LeftControl)){
-if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 90)){
-power.transform.Rotate(Vector3.forward* Time.deltaTime*50);
-}
+ if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 90)){
+  power.transform.Rotate(Vector3.forward* Time.deltaTime*50);
+ }
+ if ((arm.transform.eulerAngles.z <360 && arm.transform.eulerAngles.z > 275)||(arm.transform.eulerAngles.z >0  && arm.transform.eulerAngles.z < 90)){
+  arm.transform.Rotate(Vector3.forward * Time.deltaTime*50);
+ }
 }
 //print(power.transform.eulerAngles.z);
 
