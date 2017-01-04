@@ -12,6 +12,7 @@ var ground_layers :LayerMask;
 var cantJumpTimer : float;
 var speedOfMove : float;
 var jumpTimer : float;
+var backJumpT : float;
 
 var jumpForceUp : int;
 var jumpForceSide : int;
@@ -32,6 +33,7 @@ function FixedUpdate () {
 //co oznacza "grounded"
 	grounded = Physics2D.OverlapArea(top_left.position, bottom_right.position, ground_layers);
 //niemożność skakania przez 1 sekundę
+	backJumpT+=Time.deltaTime;
 	if(grounded) {
 	 cantJumpTimer+=Time.deltaTime;
 	}
@@ -43,7 +45,7 @@ function FixedUpdate () {
 	 jumpTimer+=Time.deltaTime;
 	}
 //ruch w lewo i prawo
-	if(Input.GetKey(KeyCode.A) && grounded) {
+	if(Input.GetKey(KeyCode.A) && grounded &&backJumpT>0.9) {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=false;
@@ -52,7 +54,7 @@ function FixedUpdate () {
 	 transform.Translate(-speedOfMove,0,0*Time.deltaTime);
 	 tekstura.GetComponent.<Animation>().Play("legs");
 	}
-	if(Input.GetKey(KeyCode.D) && grounded) {
+	if(Input.GetKey(KeyCode.D) && grounded &&backJumpT>0.9) {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=true;
@@ -91,12 +93,14 @@ function FixedUpdate () {
 	   jumpTimer=0;
 	   isJump2=false;
 	   tekstura.GetComponent.<Animation>().Play("jumpr");
+	   backJumpT=0;
 	  }
 	  else { //jeśli nie to w lewo
 	   GetComponent.<Rigidbody2D>().AddForce(Vector2.left*jumpForceSide2);
 	   jumpTimer=0;
 	   isJump2=false;
 	   tekstura.GetComponent.<Animation>().Play("jumpl");
+	   backJumpT=0;
 	  }
 	}
 }
