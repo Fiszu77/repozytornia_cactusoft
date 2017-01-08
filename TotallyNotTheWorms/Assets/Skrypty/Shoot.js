@@ -58,7 +58,7 @@ timer +=Time.deltaTime*0.5;
 print(timer);
 
 }
- if (Input.GetKeyUp(KeyCode.E))
+ if (Input.GetKeyUp(KeyCode.E) && CharController.grounded)
  {
 
 clone= Instantiate(bomb,transform.position, Quaternion.identity);

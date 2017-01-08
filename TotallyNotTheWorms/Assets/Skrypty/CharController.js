@@ -19,7 +19,7 @@ var jumpForceSide : int;
 var jumpForceUp2 : int;
 var jumpForceSide2 : int;
 
-var grounded : boolean;
+static var grounded : boolean;
 var isJump2 : boolean;
 var jump : boolean=false;
 

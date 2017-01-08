@@ -2,8 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Shoot.js">
     <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\Skrypty\Shoot.js" Line="46" Column="3" />
+      <File FileName="Assets\Skrypty\CharController.js" Line="20" Column="31" />
+=======
       <File FileName="Assets\Skrypty\Shoot.js" Line="39" Column="75" />
       <File FileName="Assets\Skrypty\CharController.js" Line="1" Column="1" />
+>>>>>>> 65f1544d70bd78c7ce429374fc8e5d1bac542d40
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
