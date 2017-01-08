@@ -4,9 +4,8 @@ var bomb : Rigidbody2D;
 var clone : Rigidbody2D;
 var power : Transform;//celownik
 var arm : Transform;//Ręka
+var pwr : RectTransform;//Wskaźnik siła
 var timer : float;//czas trzymania-siła
-var mouseposx : float;
-var mouseposy : float;//pozycja myszki względem postaci
 var mn : int;//mnożnik siły
 function Start () {
 mn=30;
@@ -18,11 +17,15 @@ if(GetComponent.<SpriteRenderer>().flipX) {
   // rotationVector.y = 0;
    //transform.rotation = Quaternion.Euler(rotationVector);
    power.transform.rotation.eulerAngles.y=180;
+   arm.transform.rotation.eulerAngles.y=180;
+   //pwr.transform.rotation.eulerAngles.y=180;
 }
 if(!GetComponent.<SpriteRenderer>().flipX){ 
 //rotationVector.y = 180;
    //transform.rotation = Quaternion.Euler(rotationVector);
     power.transform.rotation.eulerAngles.y=0;
+    arm.transform.rotation.eulerAngles.y=0;
+    //pwr.transform.rotation.eulerAngles.y=0;
 }
 
 
@@ -30,8 +33,11 @@ if(Input.GetKey(KeyCode.LeftShift)){
  if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 280)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95)){
   power.transform.Rotate(Vector3.back * Time.deltaTime*50);
  }
- if (arm.transform.eulerAngles.z <360 && arm.transform.eulerAngles.z > 280||arm.transform.eulerAngles.z > 35  && arm.transform.eulerAngles.z < -130){
+ if (arm.transform.eulerAngles.z <360 && arm.transform.eulerAngles.z > 280||arm.transform.eulerAngles.z > 0  && arm.transform.eulerAngles.z < 95){
   arm.transform.Rotate(Vector3.back * Time.deltaTime*50);
+ }
+ if (pwr.transform.eulerAngles.z <360 && pwr.transform.eulerAngles.z > 280||pwr.transform.eulerAngles.z > 0  && pwr.transform.eulerAngles.z < 95){
+  pwr.transform.Rotate(Vector3.back * Time.deltaTime*50);
  }
 }
 if(Input.GetKey(KeyCode.LeftControl)){
@@ -40,6 +46,9 @@ if(Input.GetKey(KeyCode.LeftControl)){
  }
  if ((arm.transform.eulerAngles.z <360 && arm.transform.eulerAngles.z > 275)||(arm.transform.eulerAngles.z >0  && arm.transform.eulerAngles.z < 90)){
   arm.transform.Rotate(Vector3.forward * Time.deltaTime*50);
+ }
+ if ((pwr.transform.eulerAngles.z <360 && pwr.transform.eulerAngles.z > 275)||(pwr.transform.eulerAngles.z >0  && pwr.transform.eulerAngles.z < 90)){
+  pwr.transform.Rotate(Vector3.forward * Time.deltaTime*50);
  }
 }
 //print(power.transform.eulerAngles.z);

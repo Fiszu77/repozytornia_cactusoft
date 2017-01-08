@@ -49,7 +49,7 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=false;
-	 armTex.GetComponent.<SpriteRenderer>().flipX=false;
+	 //armTex.GetComponent.<SpriteRenderer>().flipY=true;
 	 arm.GetComponent.<Transform>().localPosition.x=-0.8;
 	 transform.Translate(-speedOfMove,0,0*Time.deltaTime);
 	 tekstura.GetComponent.<Animation>().Play("legs");
@@ -58,8 +58,8 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=true;
-	 armTex.GetComponent.<SpriteRenderer>().flipX=true;
-	 arm.GetComponent.<Transform>().localPosition.x=1.8;
+	 //armTex.GetComponent.<SpriteRenderer>().flipY=false;
+	 arm.GetComponent.<Transform>().localPosition.x=0.8;
 	 transform.Translate(speedOfMove,0,0*Time.deltaTime);
 	 tekstura.GetComponent.<Animation>().Play("legs");
 	}
