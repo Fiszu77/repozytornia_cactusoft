@@ -3,6 +3,8 @@ var top_left : Transform;
 var bottom_right : Transform;
 
 var legs : GameObject[];
+var armTex : GameObject;
+var arm : GameObject;
 var tekstura : GameObject;
 
 var ground_layers :LayerMask;
@@ -47,6 +49,8 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=false;
+	 //armTex.GetComponent.<SpriteRenderer>().flipY=true;
+	 arm.GetComponent.<Transform>().localPosition.x=-0.8;
 	 transform.Translate(-speedOfMove,0,0*Time.deltaTime);
 	 tekstura.GetComponent.<Animation>().Play("legs");
 	}
@@ -54,6 +58,8 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=true;
+	 //armTex.GetComponent.<SpriteRenderer>().flipY=false;
+	 arm.GetComponent.<Transform>().localPosition.x=0.8;
 	 transform.Translate(speedOfMove,0,0*Time.deltaTime);
 	 tekstura.GetComponent.<Animation>().Play("legs");
 	}
@@ -65,6 +71,7 @@ function FixedUpdate () {
 	 jump=true;
 	 cantJumpTimer=0;
 	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*jumpForceUp);
+
 	 if(!tekstura.GetComponent.<SpriteRenderer>().flipX) { //jeśli jest odwrócony w lewo to skacz w lewo
 	  GetComponent.<Rigidbody2D>().AddForce(Vector2.left*jumpForceSide);
 	 }
@@ -72,12 +79,14 @@ function FixedUpdate () {
 	  GetComponent.<Rigidbody2D>().AddForce(Vector2.right*jumpForceSide);
 	 }
 	}
+
 	if(Input.GetKeyDown(KeyCode.LeftAlt) && grounded && cantJumpTimer>=1) {
 	 jump=true;
 	 cantJumpTimer=0;
 	 isJump2=true;
 	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*jumpForceUp2);
 	}
+
 	 if(jumpTimer>=0.8) {
 	  if(!tekstura.GetComponent.<SpriteRenderer>().flipX) { //jeśli jest odwrócony w lewo to skacz w prawo
 	   GetComponent.<Rigidbody2D>().AddForce(Vector2.right*jumpForceSide2);
