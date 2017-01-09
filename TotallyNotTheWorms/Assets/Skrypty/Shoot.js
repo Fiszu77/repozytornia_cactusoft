@@ -5,12 +5,9 @@ var clone : Rigidbody2D;
 var power : Transform;//celownik
 var arm : Transform;//Ręka
 var pwr : RectTransform;//Wskaźnik siła
+var pwrFill : UnityEngine.UI.Slider;
 var timer : float;//czas trzymania-siła
 var mn : int;//mnożnik siły
-function Start () {
-mn=30;
-timer=0;
-}
 
 function Update () {
 if(GetComponent.<SpriteRenderer>().flipX) {
@@ -54,11 +51,12 @@ if(Input.GetKey(KeyCode.LeftControl)){
 //print(power.transform.eulerAngles.z);
 
 if(Input.GetKey(KeyCode.E)){
-timer +=Time.deltaTime*0.5;
+timer+=Time.deltaTime;
+pwrFill.value+=Time.deltaTime*1;
 print(timer);
 
 }
- if (Input.GetKeyUp(KeyCode.E) && CharController.grounded)
+ if (Input.GetKeyUp(KeyCode.E) && CharController.grounded || timer>=1)
  {
 
 clone= Instantiate(bomb,transform.position, Quaternion.identity);
@@ -89,6 +87,7 @@ clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.euler
 }
 }
 timer=0;
+pwrFill.value=0;
 }
 
 

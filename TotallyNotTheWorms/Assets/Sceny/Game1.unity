@@ -706,7 +706,6 @@ MonoBehaviour:
   jumpForceSide: 1000
   jumpForceUp2: 2000
   jumpForceSide2: 1000
-  grounded: 0
   isJump2: 0
   jump: 0
   pointsArray:
@@ -896,8 +895,9 @@ MonoBehaviour:
   power: {fileID: 1865879254}
   arm: {fileID: 2010782142}
   pwr: {fileID: 1744502305}
+  pwrFill: {fileID: 1699779268}
   timer: 0
-  mn: 0
+  mn: 60
 --- !u!1 &805023120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1065,7 @@ RectTransform:
   m_GameObject: {fileID: 1073682964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1116319220}
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1073682967
@@ -1379,7 +1379,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 0}
+  m_AnchoredPosition: {x: 175, y: 0}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699779268
@@ -1424,7 +1424,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
