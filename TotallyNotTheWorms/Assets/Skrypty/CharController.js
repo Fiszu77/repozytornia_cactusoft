@@ -36,6 +36,9 @@ function FixedUpdate () {
 	backJumpT+=Time.deltaTime;
 	if(grounded) {
 	 cantJumpTimer+=Time.deltaTime;
+	 tekstura.GetComponent.<Animation>().Stop("jumpl");
+	   tekstura.GetComponent.<Animation>().Stop("jumpr");
+	  tekstura.transform.eulerAngles.z =-360;
 	}
 	else {
 	 cantJumpTimer=0;
