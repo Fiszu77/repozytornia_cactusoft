@@ -2,10 +2,10 @@
 
 var bomb : Rigidbody2D;
 var clone : Rigidbody2D;
-var power : Transform;//celownik
+var power : GameObject;//celownik
 var arm : Transform;//Ręka
 var pwr : RectTransform;//Wskaźnik siła
-var pwrFill : UnityEngine.UI.Slider;
+var pwrFill : UnityEngine.UI.Slider;//fill wskaźnika
 var timer : float;//czas trzymania-siła
 var mn : int;//mnożnik siły
 static var isArmed : boolean;//czy broń jest wyciągnięta?
@@ -19,7 +19,7 @@ if(GetComponent.<SpriteRenderer>().flipX) {
    arm.transform.rotation.eulerAngles.y=180;
    pwr.transform.rotation.eulerAngles.y=180;
 }
-if(!GetComponent.<SpriteRenderer>().flipX){ 
+if(!GetComponent.<SpriteRenderer>().flipX) {
 //rotationVector.y = 180;
    //transform.rotation = Quaternion.Euler(rotationVector);
     power.transform.rotation.eulerAngles.y=0;
@@ -37,7 +37,7 @@ if(Input.GetKey(KeyCode.LeftShift)){
 }
 if(Input.GetKey(KeyCode.LeftControl)){
  if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 90)){
-  power.transform.Rotate(Vector3.forward* Time.deltaTime*50);
+  power.transform.Rotate(Vector3.forward * Time.deltaTime*50);
   arm.transform.Rotate(Vector3.forward * Time.deltaTime*50);
   pwr.transform.Rotate(Vector3.forward * Time.deltaTime*50);
  }
@@ -48,7 +48,7 @@ if(weapon==0) {//Broń nr 1
   timer+=Time.deltaTime;
   pwrFill.value+=Time.deltaTime;
   print(timer);
-  }
+ }
  if (Input.GetKeyUp(KeyCode.E) && CharController.grounded || timer>=1) {
   clone= Instantiate(bomb,transform.position, Quaternion.identity);
   if(GetComponent.<SpriteRenderer>().flipX) {
@@ -79,6 +79,11 @@ if(weapon==0) {//Broń nr 1
   }
   timer=0;
   pwrFill.value=0;
+  power.SetActive(false);
+  isArmed=false;
+  power.transform.localRotation=Quaternion.Euler(0,0,45);
+  pwr.transform.localRotation=Quaternion.Euler(0,0,225);
+  arm.transform.localRotation=Quaternion.Euler(0,0,45);
  }
 }
 
