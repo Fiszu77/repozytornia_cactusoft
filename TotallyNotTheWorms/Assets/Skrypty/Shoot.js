@@ -1,16 +1,22 @@
 ﻿#pragma strict
 
-var bomb : Rigidbody2D;
+//var bomb : Rigidbody2D;
 var clone : Rigidbody2D;
 var power : Transform;//celownik
 var arm : Transform;//Ręka
 var pwr : RectTransform;//Wskaźnik siła
 var pwrFill : UnityEngine.UI.Slider;
 var timer : float;//czas trzymania-siła
-var mn : int;//mnożnik siły
+
 static var isArmed : boolean;//czy broń jest wyciągnięta?
 static var weapon : int;//numer broni
-
+class Weapons{
+var name : String;
+var mn : int;//mnożnik siły
+var slider : boolean;//czy slider ma być
+var weap : Rigidbody2D;// obiekt do pojawienia jako broń
+};
+var tab : Weapons[];
 function Update () {
 if(GetComponent.<SpriteRenderer>().flipX) {
   // rotationVector.y = 0;
@@ -43,44 +49,45 @@ if(Input.GetKey(KeyCode.LeftControl)){
  }
 }
 //print(power.transform.eulerAngles.z);
-if(weapon==0) {//Broń nr 1
+
  if(Input.GetKey(KeyCode.E)){
   timer+=Time.deltaTime;
+  if (tab[weapon].slider)
   pwrFill.value+=Time.deltaTime;
   print(timer);
   }
  if (Input.GetKeyUp(KeyCode.E) && CharController.grounded || timer>=1) {
-  clone= Instantiate(bomb,transform.position, Quaternion.identity);
+  clone= Instantiate(tab[weapon].weap,transform.position, Quaternion.identity);
   if(GetComponent.<SpriteRenderer>().flipX) {
 
    if (power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275) {
     clone.transform.Translate(3,1.3,0);
-    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((270-power.transform.eulerAngles.z)*mn*timer));
-    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((360-power.transform.eulerAngles.z)*mn*timer));
+    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((270-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
+    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((360-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
    }
    if (power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95) {
     clone.transform.Translate(3,-1.3,0);
-    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((90-power.transform.eulerAngles.z)*-mn*timer));
-    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*mn*timer));
+    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((90-power.transform.eulerAngles.z)*-tab[weapon].mn*timer));
+    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
    }
   }
   if(!GetComponent.<SpriteRenderer>().flipX){ 
 
    if (power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275){
     clone.transform.Translate(-3,1.3,0);
-    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((270-power.transform.eulerAngles.z)*-mn*timer));
-    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((360-power.transform.eulerAngles.z)*mn*timer));
+    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((270-power.transform.eulerAngles.z)*-tab[weapon].mn*timer));
+    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((360-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
    }
    if (power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95){
     clone.transform.Translate(-3,-1.3,0);
-    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((90-power.transform.eulerAngles.z)*mn*timer));
-    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*mn*timer));
+    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.left*((90-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
+    clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
    }
   }
   timer=0;
   pwrFill.value=0;
  }
-}
+
 
 
 }
