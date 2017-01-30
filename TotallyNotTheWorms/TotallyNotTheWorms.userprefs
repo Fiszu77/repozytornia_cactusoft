@@ -2,11 +2,17 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\StickyB.js">
     <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\Skrypty\Shoot.js" Line="93" Column="56" />
+      <File FileName="Assets\Skrypty\Character.js" Line="49" Column="8" />
+      <File FileName="Assets\Skrypty\Menu.js" Line="23" Column="23" />
+=======
       <File FileName="Assets\Skrypty\Shoot.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Character.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Menu.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Bomb.js" Line="21" Column="2" />
       <File FileName="Assets\Skrypty\StickyB.js" Line="21" Column="1" />
+>>>>>>> 4c17911968ffbeb107bffab3793a52b0011c7ba3
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

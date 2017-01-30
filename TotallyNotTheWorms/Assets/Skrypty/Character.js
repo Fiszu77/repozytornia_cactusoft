@@ -3,6 +3,7 @@
 var inv:GameObject;
 var menu:GameObject;
 var aiming:GameObject[];
+var kamera:GameObject;
 
 function Update () {
 	if(Input.GetKeyDown(KeyCode.Tab)) {
@@ -21,6 +22,14 @@ function Update () {
 	 else {
 	  menu.SetActive(false);
 	  Time.timeScale=1;
+	 }
+	}
+	if(kamera.GetComponent.<Camera>().orthographicSize>=25 && kamera.GetComponent.<Camera>().orthographicSize<=55) {
+	 if(Input.GetAxis("Mouse ScrollWheel")>0) {
+	  kamera.GetComponent.<Camera>().orthographicSize--;
+	 }
+	 if(Input.GetAxis("Mouse ScrollWheel")<0) {
+	  kamera.GetComponent.<Camera>().orthographicSize++;
 	 }
 	}
 }
