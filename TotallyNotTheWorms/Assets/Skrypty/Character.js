@@ -43,6 +43,10 @@ function W1 () {
 	Shoot.weapon=1;
 	Armed();
 }
+function W2 () {
+	Shoot.weapon=2;
+	Armed();
+}
 
 function Armed () {
 	Shoot.isArmed=true;
