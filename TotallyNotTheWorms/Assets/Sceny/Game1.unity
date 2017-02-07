@@ -1121,7 +1121,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9f6be0f2b62229b43bd7e42650008c11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 408ba34cf378764408363c34d17aafb8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1390,6 +1390,7 @@ MonoBehaviour:
   aiming:
   - {fileID: 1865879253}
   - {fileID: 1744502304}
+  kamera: {fileID: 439302981}
 --- !u!4 &591635433
 Transform:
   m_ObjectHideFlags: 0
@@ -1564,7 +1565,7 @@ MonoBehaviour:
     slider: 1
     weap: {fileID: 50000011797142286, guid: b9b86d9d6de6a244c828ad323b773492, type: 2}
   - name: StickyBomb
-    mn: 20
+    mn: 30
     slider: 1
     weap: {fileID: 50000011797142286, guid: 2ffe458abd3007b45962159eb8209cc7, type: 2}
 --- !u!1 &787647676
@@ -2239,7 +2240,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e5adc708c10ea074ba4d9f19a660a52c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4feb606920573964ebf91b62ca8dcea6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2460,7 +2461,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.896
+  m_Value: 0.74
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
