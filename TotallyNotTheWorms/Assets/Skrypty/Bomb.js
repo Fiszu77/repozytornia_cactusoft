@@ -18,6 +18,7 @@ function OnTriggerStay2D (other:Collider2D) {
 	  print("coll");
 	 }
 	 distance = Vector2.Distance(transform.position, character.transform.position);
+	 CharController.hp -= (20-distance)*0.001;
 	 print(distance);
 	 Destroy(gameObject);
 	}
