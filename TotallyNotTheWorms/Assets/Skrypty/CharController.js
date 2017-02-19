@@ -54,8 +54,10 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=false;
-	 arm.GetComponent.<Transform>().localPosition.x=-0.8;
-	 crosshair.GetComponent.<Transform>().localPosition.x=-0.8;
+	 arm.GetComponent.<Transform>().localPosition.x=-1.4;
+	 crosshair.GetComponent.<Transform>().localPosition.x=-1.4;
+	 legs[0].GetComponent.<Transform>().localPosition.x=-0.5;
+	 legs[1].GetComponent.<Transform>().localPosition.x=-0.5;
 	 pwr.GetComponent.<RectTransform>().localPosition.x=-5;
 	 transform.Translate(-speedOfMove,0,0*Time.deltaTime);
 	 tekstura.GetComponent.<Animation>().Play("legs");
@@ -64,8 +66,10 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=true;
-	 arm.GetComponent.<Transform>().localPosition.x=0.8;
-	 crosshair.GetComponent.<Transform>().localPosition.x=0.8;
+	 arm.GetComponent.<Transform>().localPosition.x=1.4;
+	 crosshair.GetComponent.<Transform>().localPosition.x=1.4;
+	 legs[0].GetComponent.<Transform>().localPosition.x=0.5;
+	 legs[1].GetComponent.<Transform>().localPosition.x=0.5;
 	 pwr.GetComponent.<RectTransform>().localPosition.x=5;
 	 transform.Translate(speedOfMove,0,0*Time.deltaTime);
 	 tekstura.GetComponent.<Animation>().Play("legs");

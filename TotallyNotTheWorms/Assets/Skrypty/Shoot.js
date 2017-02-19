@@ -88,9 +88,9 @@ if(Input.GetKey(KeyCode.LeftControl)){
   pwrFill.value=0;
   power.SetActive(false);
   isArmed=false;
-  power.transform.localRotation=Quaternion.Euler(0,0,45);
-  pwr.transform.localRotation=Quaternion.Euler(0,0,225);
-  arm.transform.localRotation=Quaternion.Euler(0,0,45);
+  power.transform.localRotation=Quaternion.Euler(0,0,60);
+  pwr.transform.localRotation=Quaternion.Euler(0,0,238.5);
+  arm.transform.localRotation=Quaternion.Euler(0,0,20);
  }
 
 
