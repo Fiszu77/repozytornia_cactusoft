@@ -1358,6 +1358,7 @@ MonoBehaviour:
   - {x: -1.3, y: -3}
   - {x: -0.3, y: 5}
   - {x: 0.3, y: 5}
+  hpFill: {fileID: 1518401306}
 --- !u!50 &591635431
 Rigidbody2D:
   serializedVersion: 2

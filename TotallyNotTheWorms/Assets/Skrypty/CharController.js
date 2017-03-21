@@ -27,11 +27,17 @@ var jump : boolean=false;
 
 var pointsArray:Vector2[];
 
+var hpFill : UnityEngine.UI.Slider;
+static var hp : float;
+
 function Start () {
 	GetComponent.<EdgeCollider2D>().points=pointsArray;
+	hp=1;
 }
 
 function FixedUpdate () {
+hpFill.value = hp;
+
 //co oznacza "grounded"
 	grounded = Physics2D.OverlapArea(top_left.position, bottom_right.position, ground_layers);
 //niemożność skakania przez 1 sekundę
