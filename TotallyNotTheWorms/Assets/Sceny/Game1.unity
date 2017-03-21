@@ -871,6 +871,7 @@ MonoBehaviour:
   - {fileID: 1481858310}
   - {fileID: 201341765}
   - {fileID: 222907666}
+  - {fileID: 1830436148}
   outlineRendererColors: 
   eraseRenderers: []
   lineThickness: 2
@@ -1308,7 +1309,6 @@ GameObject:
   - 114: {fileID: 591635430}
   - 68: {fileID: 591635434}
   - 111: {fileID: 591635436}
-  - 61: {fileID: 591635437}
   m_Layer: 8
   m_Name: Character
   m_TagString: Player
@@ -1392,6 +1392,8 @@ MonoBehaviour:
   - {fileID: 1865879253}
   - {fileID: 1744502304}
   kamera: {fileID: 439302981}
+  hp: 100
+  hpSlider: {fileID: 1518401306}
 --- !u!4 &591635433
 Transform:
   m_ObjectHideFlags: 0
@@ -1441,20 +1443,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!61 &591635437
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 591635429}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -4}
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
 --- !u!1 &759837636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,19 +1544,23 @@ MonoBehaviour:
   pwr: {fileID: 1744502305}
   pwrFill: {fileID: 1699779268}
   timer: 0
+  weapRend: {fileID: 1830436146}
   tab:
   - name: Bomb
     mn: 60
     slider: 1
     weap: {fileID: 50000011797142286, guid: 5cb76ddd7a9449e4492e11f82d52ee4c, type: 2}
+    weapTex: {fileID: 21300000, guid: 893092fa58c55074681130aa89aa4243, type: 3}
   - name: Szojda
     mn: 20
     slider: 1
     weap: {fileID: 50000011797142286, guid: b9b86d9d6de6a244c828ad323b773492, type: 2}
+    weapTex: {fileID: 21300000, guid: ff1579202aea58b4e8f4fe3466df0c71, type: 3}
   - name: StickyBomb
     mn: 30
     slider: 1
     weap: {fileID: 50000011797142286, guid: 2ffe458abd3007b45962159eb8209cc7, type: 2}
+    weapTex: {fileID: 21300000, guid: 9b8082ee77442574c98ee4c4315cde60, type: 3}
 --- !u!1 &787647676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2778,6 +2770,68 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1826785015}
+--- !u!1 &1830436146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1830436147}
+  - 212: {fileID: 1830436148}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1830436147
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1830436146}
+  m_LocalRotation: {x: 0, y: 0, z: 0.17364816, w: 0.9848078}
+  m_LocalPosition: {x: -1.8, y: -1.7, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
+  m_Children: []
+  m_Father: {fileID: 2010782142}
+  m_RootOrder: 1
+--- !u!212 &1830436148
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1830436146}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 1
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 893092fa58c55074681130aa89aa4243, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1 &1865879253
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,6 +3065,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
   m_Children:
   - {fileID: 1609694121}
+  - {fileID: 1830436147}
   m_Father: {fileID: 759837637}
   m_RootOrder: 2
 --- !u!1 &2085496857

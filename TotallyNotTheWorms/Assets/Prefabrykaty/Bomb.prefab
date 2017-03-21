@@ -21,12 +21,11 @@ GameObject:
   - 4: {fileID: 4000012098869424}
   - 212: {fileID: 212000012002719582}
   - 58: {fileID: 58000011437921986}
-  - 58: {fileID: 58000011585674700}
   - 50: {fileID: 50000011797142286}
   - 114: {fileID: 114000012640592416}
   m_Layer: 0
   m_Name: Bomb
-  m_TagString: Untagged
+  m_TagString: bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,20 +74,6 @@ CircleCollider2D:
   m_Offset: {x: -0, y: -0.18}
   serializedVersion: 2
   m_Radius: 1
---- !u!58 &58000011585674700
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012921224550}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.18}
-  serializedVersion: 2
-  m_Radius: 8
 --- !u!114 &114000012640592416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,6 +86,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
+  distance: 0
+  character: {fileID: 0}
+  atomsCollided: []
+  radius: 14
 --- !u!212 &212000012002719582
 SpriteRenderer:
   m_ObjectHideFlags: 1

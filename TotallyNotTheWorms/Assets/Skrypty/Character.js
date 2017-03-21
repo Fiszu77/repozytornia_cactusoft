@@ -5,7 +5,12 @@ var menu:GameObject;
 var aiming:GameObject[];
 var kamera:GameObject;
 
+var hp:float=100;
+
+var hpSlider:UnityEngine.UI.Slider;
+
 function Update () {
+
 	if(Input.GetKeyDown(KeyCode.Tab)) {
 	 if(inv.activeInHierarchy==false) {
 	  inv.SetActive(true);
@@ -24,14 +29,24 @@ function Update () {
 	  Time.timeScale=1;
 	 }
 	}
+
 	if(kamera.GetComponent.<Camera>().orthographicSize>=25 && kamera.GetComponent.<Camera>().orthographicSize<=55) {
 	 if(Input.GetAxis("Mouse ScrollWheel")>0) {
-	  kamera.GetComponent.<Camera>().orthographicSize--;
+	  kamera.GetComponent.<Camera>().orthographicSize-=2;
 	 }
 	 if(Input.GetAxis("Mouse ScrollWheel")<0) {
-	  kamera.GetComponent.<Camera>().orthographicSize++;
+	  kamera.GetComponent.<Camera>().orthographicSize+=2;
 	 }
 	}
+	if(kamera.GetComponent.<Camera>().orthographicSize<25) {
+	 kamera.GetComponent.<Camera>().orthographicSize=25;
+	}
+	if(kamera.GetComponent.<Camera>().orthographicSize>55) {
+	 kamera.GetComponent.<Camera>().orthographicSize=55;
+	}
+
+	Mathf.RoundToInt(hp);
+	hpSlider.value=hp/100;
 }
 
 function W0 () {
