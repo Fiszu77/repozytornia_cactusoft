@@ -19,7 +19,7 @@ function Update () {
 	  inv.SetActive(false);
 	 }
 	}
-//ał/wył menu
+//wł/wył menu
 	if(Input.GetKeyDown(KeyCode.Escape)) {
 	 if(menu.activeInHierarchy==false) {
 	  menu.SetActive(true);
@@ -59,20 +59,17 @@ function W1 () {
 	Shoot.weapon=1;
 	Armed();
 }
+
 function W2 () {
 	Shoot.weapon=2;
 	Armed();
 }
-<<<<<<< HEAD
-//uzbrojony (broń została wybrana)
-=======
+
 function W3 () {
 	Shoot.weapon=3;
 	Armed();
 }
-
-
->>>>>>> c69d79b9946ccaf1d3e1dfcde8c8386d4108dc0f
+//uzbrojony (broń została wybrana)
 function Armed () {
 	Shoot.isArmed=true;
 	aiming[0].SetActive(true);
