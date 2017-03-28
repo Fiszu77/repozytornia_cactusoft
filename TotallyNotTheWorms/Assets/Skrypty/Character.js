@@ -62,6 +62,11 @@ function W2 () {
 	Shoot.weapon=2;
 	Armed();
 }
+function W3 () {
+	Shoot.weapon=3;
+	Armed();
+}
+
 
 function Armed () {
 	Shoot.isArmed=true;
