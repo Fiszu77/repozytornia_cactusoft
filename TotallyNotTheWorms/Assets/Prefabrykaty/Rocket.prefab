@@ -86,7 +86,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atomsCollided: []
+<<<<<<< HEAD
   radius: 16
+=======
+  radius: 12
+>>>>>>> 5226fc42a3ee1ae04a0c7227799bb1f74a3dd084
 --- !u!212 &212000012002719582
 SpriteRenderer:
   m_ObjectHideFlags: 1
