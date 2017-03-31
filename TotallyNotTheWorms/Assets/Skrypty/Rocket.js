@@ -10,7 +10,7 @@ function Boom () {
 
 	atomsCollided=Physics2D.OverlapCircleAll(transform.position,radius);
 	for(var i=0;i<atomsCollided.length;i++) {
-	print("aaa0");
+
 	 if(atomsCollided[i].CompareTag("atom")) {
 	  atomsCollided[i].gameObject.SetActive(false);
 	 }
