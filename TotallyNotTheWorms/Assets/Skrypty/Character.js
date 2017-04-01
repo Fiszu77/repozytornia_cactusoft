@@ -69,6 +69,10 @@ function W3 () {
 	Shoot.weapon=3;
 	Armed();
 }
+function W4 () {
+	Shoot.weapon=4;
+	Armed();
+}
 //uzbrojony (broń została wybrana)
 function Armed () {
 	Shoot.isArmed=true;
