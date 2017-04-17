@@ -87,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   atomsCollided: []
-  radius: 16
+  radius: 22
 --- !u!212 &212000012002719582
 SpriteRenderer:
   m_ObjectHideFlags: 1

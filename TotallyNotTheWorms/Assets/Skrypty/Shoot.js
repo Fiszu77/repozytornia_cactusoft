@@ -89,18 +89,22 @@ if(Input.GetKey(KeyCode.LeftControl)){
     clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
    }
   }
-  timer=0;
-  pwrFill.value=0;
-  power.SetActive(false);
-  isArmed=false;
-  power.transform.localRotation=Quaternion.Euler(0,0,60);
-  pwr.transform.localRotation=Quaternion.Euler(0,0,238.5);
-  arm.transform.localRotation=Quaternion.Euler(0,0,20);
-  weapRend.SetActive(false);
+  Reset();
  }
 
 
 
 }
 
+}
+
+function Reset() {
+	timer=0;
+	pwrFill.value=0;
+	power.SetActive(false);
+	isArmed=false;
+	power.transform.localRotation=Quaternion.Euler(0,0,60);
+	pwr.transform.localRotation=Quaternion.Euler(0,0,238.5);
+	arm.transform.localRotation=Quaternion.Euler(0,0,20);
+	weapRend.SetActive(false);
 }

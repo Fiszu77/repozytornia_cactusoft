@@ -4,12 +4,32 @@ var inv:GameObject;
 var menu:GameObject;
 var aiming:GameObject[];
 var kamera:GameObject;
+var hat:GameObject;
+var tekstura:GameObject;
+
+var hats:Sprite[];
 
 var hp:float=100;
+var c:int;
+var team:int;
+var player:int;
+
+var myTurn:boolean;
 
 var hpSlider:UnityEngine.UI.Slider;
+var hpColor:UnityEngine.UI.Image;
+
+function Start() {
+//losowanie kapelusza
+	var h=Random.Range(0,3);
+	hat.GetComponent.<SpriteRenderer>().sprite=hats[h];
+}
 
 function Update () {
+ if(myTurn) {
+  gameObject.GetComponent.<CharController>().enabled=true;
+  tekstura.GetComponent.<Shoot>().enabled=true;
+  kamera.SetActive(true);
 //wł/wył ekwipunku 
 	if(Input.GetKeyDown(KeyCode.Tab)) {
 	 if(inv.activeInHierarchy==false) {
@@ -45,9 +65,24 @@ function Update () {
 	if(kamera.GetComponent.<Camera>().orthographicSize>55) {
 	 kamera.GetComponent.<Camera>().orthographicSize=55;
 	}
+ }
+ else {
+  gameObject.GetComponent.<CharController>().enabled=false;
+  tekstura.GetComponent.<Shoot>().enabled=false;
+  kamera.SetActive(false);
+ }
 //ustalanie punktów życia
 	Mathf.RoundToInt(hp);
 	hpSlider.value=hp/100;
+//ustalanie koloru życia
+	if(hp>=50) {
+	 c=-5.1*hp;
+	 hpColor.color=new Color32(c,255,0,255);
+	}
+	else {
+	 c=5.1*hp;
+	 hpColor.color=new Color32(255,c,0,255);
+	}
 }
 //wybór broni
 function W0 () {
@@ -75,8 +110,10 @@ function W4 () {
 }
 //uzbrojony (broń została wybrana)
 function Armed () {
-	Shoot.isArmed=true;
-	aiming[0].SetActive(true);
-	aiming[1].SetActive(true);
-	inv.SetActive(false);
+	if(myTurn) {
+	 Shoot.isArmed=true;
+	 aiming[0].SetActive(true);
+	 aiming[1].SetActive(true);
+	 inv.SetActive(false);
+	}
 }

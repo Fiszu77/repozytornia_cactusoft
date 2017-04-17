@@ -8,6 +8,7 @@ var arm : GameObject;
 var crosshair : GameObject;
 var pwr : GameObject;
 var tekstura : GameObject;
+var hat : GameObject;
 
 var ground_layers :LayerMask;
 
@@ -55,6 +56,8 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=false;
+	 hat.GetComponent.<SpriteRenderer>().flipX=false;
+	 hat.GetComponent.<Transform>().localPosition.x=-1;
 	 arm.GetComponent.<Transform>().localPosition.x=-1.4;
 	 crosshair.GetComponent.<Transform>().localPosition.x=-1.4;
 	 pwr.GetComponent.<RectTransform>().localPosition.x=-5;
@@ -74,6 +77,8 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=true;
+	 hat.GetComponent.<SpriteRenderer>().flipX=true;
+	 hat.GetComponent.<Transform>().localPosition.x=1;
 	 arm.GetComponent.<Transform>().localPosition.x=1.4;
 	 crosshair.GetComponent.<Transform>().localPosition.x=1.4;
 	 pwr.GetComponent.<RectTransform>().localPosition.x=5;
