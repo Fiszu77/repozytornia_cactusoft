@@ -1,6 +1,7 @@
 ﻿#pragma strict
 
 static var characters:GameObject[];
+var teamTxts:GameObject[];
 
 var turnTimer:float;
 var lengthOfTurn:int;
@@ -10,15 +11,30 @@ var playerTurn:int=1;
 var t1Hp:float;
 var t2Hp:float;
 
-var t1HpSlider:UnityEngine.UI.Slider;
-var t2HpSlider:UnityEngine.UI.Slider;
+var tColors:Color32[];
+
+var tHpSliders:UnityEngine.UI.Slider[];
+var turnTimerTxt:UnityEngine.UI.Text;
 
 function Start () {
 	characters=GameObject.FindGameObjectsWithTag("Player");
+	turnTimer=lengthOfTurn;
+//wyłączanie niepotrzebnych hp sliderów drużyn
+	for(var x=teams;x<4;x++) {
+	 teamTxts[x].SetActive(false);
+	}
 }
 
 function Update () {
-	turnTimer+=Time.deltaTime;
+	turnTimer-=Time.deltaTime;
+	turnTimerTxt.text=""+Mathf.RoundToInt(turnTimer);
+
+	if(turnTimer<=5) {
+	 turnTimerTxt.color=tColors[0];
+	}
+	else {
+	 turnTimerTxt.color=tColors[teamTurn];
+	}
 //przydzielanie hp pojedyńczych nieświszczuków do hp drużyny
 	for(var i=0;i<characters.length;i++) {
 	 switch(characters[i].GetComponent.<Character>().team) {
@@ -32,11 +48,11 @@ function Update () {
 	}
 //ustalanie punktów życia drużyny
 	Mathf.RoundToInt(t1Hp);
-	t1HpSlider.value=t1Hp/400;
+	tHpSliders[0].value=t1Hp/400;
 	Mathf.RoundToInt(t2Hp);
-	t2HpSlider.value=t2Hp/400;
+	tHpSliders[1].value=t2Hp/400;
 //kiedy skończy się czas tury
-	if(turnTimer>=lengthOfTurn) {
+	if(turnTimer<=0) {
 	 var x:int;
 	 x++;
 	 for(var n=0;n<characters.length;n++) {//oddaj turę innemu nieświszukowi
@@ -65,7 +81,7 @@ function Update () {
 	 if(teamTurn==teams+1) {
 	  teamTurn=1;
 	 }
-	 turnTimer=0;
+	 turnTimer=lengthOfTurn;
 	}
 
 	if(x==4) {

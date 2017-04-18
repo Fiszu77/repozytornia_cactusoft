@@ -7,7 +7,7 @@ var arm : Transform;//Ręka
 var pwr : RectTransform;//Wskaźnik siła
 var pwrFill : UnityEngine.UI.Slider;//fill wskaźnika
 var timer : float;//czas trzymania-siła
-var weapRend : GameObject;
+var weapRend : GameObject;//broń trzymana w łapce
 
 static var isArmed : boolean;//czy broń jest wyciągnięta?
 static var weapon : int;//numer broni
@@ -62,7 +62,7 @@ if(Input.GetKey(KeyCode.LeftControl)){
   print(timer);
  }
  if (Input.GetKeyUp(KeyCode.E) && CharController.grounded || timer>=1) {
-  clone= Instantiate(tab[weapon].weap,transform.position, Quaternion.identity);
+  clone=Instantiate(tab[weapon].weap,transform.position, Quaternion.identity);
   if(GetComponent.<SpriteRenderer>().flipX) {
 
    if (power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275) {

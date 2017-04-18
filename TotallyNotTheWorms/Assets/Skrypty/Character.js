@@ -72,7 +72,6 @@ function Update () {
   kamera.SetActive(false);
  }
 //ustalanie punktów życia
-	Mathf.RoundToInt(hp);
 	hpSlider.value=hp/100;
 //ustalanie koloru życia
 	if(hp>=50) {
