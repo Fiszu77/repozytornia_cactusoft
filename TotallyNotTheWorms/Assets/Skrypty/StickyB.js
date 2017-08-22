@@ -20,8 +20,11 @@ function Boom () {
 	 if(atomsCollided[i].CompareTag("Player")) {
 	  var distance=Vector2.Distance(transform.position,atomsCollided[i].transform.position);
 	  var damage:float;
+	  var knockback:float;
 	  damage=distance*-10+180;
 	  atomsCollided[i].gameObject.GetComponent.<Character>().hp-=damage;
+	  knockback=distance*radius*0.1+75;
+	  atomsCollided[i].gameObject.GetComponent.<Rigidbody2D>().AddForce(gameObject.transform.position-atomsCollided[i].gameObject.transform.position*knockback);
 	 }
 	}
 	Destroy(gameObject);

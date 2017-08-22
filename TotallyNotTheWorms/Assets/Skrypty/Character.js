@@ -6,6 +6,8 @@ var aiming:GameObject[];
 var kamera:GameObject;
 var hat:GameObject;
 var tekstura:GameObject;
+var head:GameObject;
+private var clone:GameObject;
 
 var hats:Sprite[];
 
@@ -18,6 +20,8 @@ var myTurn:boolean;
 
 var hpSlider:UnityEngine.UI.Slider;
 var hpColor:UnityEngine.UI.Image;
+
+var mowa:AudioClip[];
 
 function Start() {
 //losowanie kapelusza
@@ -82,6 +86,14 @@ function Update () {
 	 c=5.1*hp;
 	 hpColor.color=new Color32(255,c,0,255);
 	}
+//śmierć
+	if(hp<=0) {
+	 clone=Instantiate(head, transform.position, Quaternion.identity);
+	 clone.GetComponent.<Rigidbody2D>().isKinematic=false;
+	 clone.GetComponent.<CircleCollider2D>().enabled=true;
+	 clone.GetComponent.<Bomb>().enabled=true;
+	 gameObject.SetActive(false);
+	}
 }
 //wybór broni
 function W0 () {
@@ -111,8 +123,14 @@ function W4 () {
 function Armed () {
 	if(myTurn) {
 	 Shoot.isArmed=true;
+	 Shoot.head.transform.localRotation=Quaternion.Euler(0,0,30);
 	 aiming[0].SetActive(true);
 	 aiming[1].SetActive(true);
 	 inv.SetActive(false);
+	 tekstura.GetComponent.<Animation>().Stop("idleL");
+	 tekstura.GetComponent.<Animation>().Stop("idleR");
+	 var a:int=Random.Range(0,1);
+	 gameObject.GetComponent.<AudioSource>().clip=mowa[a];
+	 gameObject.GetComponent.<AudioSource>().Play();
 	}
 }

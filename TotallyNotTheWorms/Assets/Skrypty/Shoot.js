@@ -4,10 +4,13 @@
 var clone : Rigidbody2D;
 var power : GameObject;//celownik
 var arm : Transform;//Ręka
+var headvar : Transform;//głowa
+static var head : Transform;//głowa
 var pwr : RectTransform;//Wskaźnik siła
 var pwrFill : UnityEngine.UI.Slider;//fill wskaźnika
 var timer : float;//czas trzymania-siła
 var weapRend : GameObject;//broń trzymana w łapce
+var game : GameObject;//obiekt trzymający skrypt gry
 
 static var isArmed : boolean;//czy broń jest wyciągnięta?
 static var weapon : int;//numer broni
@@ -20,12 +23,17 @@ var weapTex : Sprite;//tekstura broni w łapce
 };
 var tab : Weapons[];
 
+function Start() {
+	head = headvar;
+}
+
 function Update () {
 if(GetComponent.<SpriteRenderer>().flipX) {
   // rotationVector.y = 0;
    //transform.rotation = Quaternion.Euler(rotationVector);
    power.transform.rotation.eulerAngles.y=180;
    arm.transform.rotation.eulerAngles.y=180;
+   head.transform.rotation.eulerAngles.y=180;
    pwr.transform.rotation.eulerAngles.y=180;
 }
 if(!GetComponent.<SpriteRenderer>().flipX) {
@@ -33,6 +41,7 @@ if(!GetComponent.<SpriteRenderer>().flipX) {
    //transform.rotation = Quaternion.Euler(rotationVector);
     power.transform.rotation.eulerAngles.y=0;
     arm.transform.rotation.eulerAngles.y=0;
+    head.transform.rotation.eulerAngles.y=0;
     pwr.transform.rotation.eulerAngles.y=0;
 }
 
@@ -43,6 +52,7 @@ if(Input.GetKey(KeyCode.LeftShift)){
  if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 280)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 95)){
   power.transform.Rotate(Vector3.back * Time.deltaTime*50);
   arm.transform.Rotate(Vector3.back * Time.deltaTime*50);
+  head.transform.Rotate(Vector3.back * Time.deltaTime*25);
   pwr.transform.Rotate(Vector3.back * Time.deltaTime*50);
  }
 }
@@ -50,6 +60,7 @@ if(Input.GetKey(KeyCode.LeftControl)){
  if ((power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275)||(power.transform.eulerAngles.z >0  && power.transform.eulerAngles.z < 90)){
   power.transform.Rotate(Vector3.forward * Time.deltaTime*50);
   arm.transform.Rotate(Vector3.forward * Time.deltaTime*50);
+  head.transform.Rotate(Vector3.forward * Time.deltaTime*25);
   pwr.transform.Rotate(Vector3.forward * Time.deltaTime*50);
  }
 }
@@ -76,7 +87,7 @@ if(Input.GetKey(KeyCode.LeftControl)){
     clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
    }
   }
-  if(!GetComponent.<SpriteRenderer>().flipX){
+  if(!GetComponent.<SpriteRenderer>().flipX) {
 
    if (power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275){
     clone.transform.Translate(-3,1.3,0);
@@ -89,6 +100,7 @@ if(Input.GetKey(KeyCode.LeftControl)){
     clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
    }
   }
+  game.SendMessage("Shot");
   Reset();
  }
 
@@ -106,5 +118,6 @@ function Reset() {
 	power.transform.localRotation=Quaternion.Euler(0,0,60);
 	pwr.transform.localRotation=Quaternion.Euler(0,0,238.5);
 	arm.transform.localRotation=Quaternion.Euler(0,0,20);
+	head.transform.localRotation=Quaternion.Euler(0,0,0);
 	weapRend.SetActive(false);
 }

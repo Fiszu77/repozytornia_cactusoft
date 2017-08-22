@@ -2,19 +2,21 @@
 
 static var characters:GameObject[];
 var teamTxts:GameObject[];
+var endScreen:GameObject;
 
-var turnTimer:float;
-var lengthOfTurn:int;
-var teams:int;
-var teamTurn:int=1;
-var playerTurn:int=1;
-var t1Hp:float;
+var turnTimer:float;//zegar tury
+var lengthOfTurn:int;//długość tury
+var teams:int;//ilość drużyn
+var teamTurn:int=1;//tura obecnej drużyny
+var playerTurn:int=1;//tura obecnego gracza obecnej tury
+var t1Hp:float;//ilość życia drużyny 1
 var t2Hp:float;
+static var won:int;//która drużyna wygrała
 
-var tColors:Color32[];
+var tColors:Color32[];//color paska życia drużyny
 
-var tHpSliders:UnityEngine.UI.Slider[];
-var turnTimerTxt:UnityEngine.UI.Text;
+var tHpSliders:UnityEngine.UI.Slider[];//paski życia drużyn
+var turnTimerTxt:UnityEngine.UI.Text;//tekst zegara tury
 
 function Start () {
 	characters=GameObject.FindGameObjectsWithTag("Player");
@@ -89,4 +91,23 @@ function Update () {
 	 x=0;
 	}
 
+	if(t1Hp>=1) {
+	 if(t2Hp<=0) {
+	  won=1;
+	  endScreen.SetActive(true);
+	  Time.timeScale=0.5;
+	 }
+	}
+	if(t2Hp>=1) {
+	 if(t1Hp<=0) {
+	  won=2;
+	  endScreen.SetActive(true);
+	  Time.timeScale=0.5;
+	 }
+	}
+
+}
+
+function Shot() {
+	turnTimer=5;
 }

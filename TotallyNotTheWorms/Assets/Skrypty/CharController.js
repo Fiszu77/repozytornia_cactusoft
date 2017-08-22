@@ -8,7 +8,7 @@ var arm : GameObject;
 var crosshair : GameObject;
 var pwr : GameObject;
 var tekstura : GameObject;
-var hat : GameObject;
+var head : GameObject;
 
 var ground_layers :LayerMask;
 
@@ -25,12 +25,6 @@ var jumpForceSide2 : int;
 static var grounded : boolean;
 var isJump2 : boolean;
 var jump : boolean=false;
-
-var pointsArray:Vector2[];
-
-function Start () {
-	GetComponent.<EdgeCollider2D>().points=pointsArray;
-}
 
 function FixedUpdate () {
 //co oznacza "grounded"
@@ -56,8 +50,7 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=false;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=false;
-	 hat.GetComponent.<SpriteRenderer>().flipX=false;
-	 hat.GetComponent.<Transform>().localPosition.x=-1;
+	 head.GetComponent.<Transform>().localPosition.x=-0.65;
 	 arm.GetComponent.<Transform>().localPosition.x=-1.4;
 	 crosshair.GetComponent.<Transform>().localPosition.x=-1.4;
 	 pwr.GetComponent.<RectTransform>().localPosition.x=-5;
@@ -77,8 +70,7 @@ function FixedUpdate () {
 	 tekstura.GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[0].GetComponent.<SpriteRenderer>().flipX=true;
 	 legs[1].GetComponent.<SpriteRenderer>().flipX=true;
-	 hat.GetComponent.<SpriteRenderer>().flipX=true;
-	 hat.GetComponent.<Transform>().localPosition.x=1;
+	 head.GetComponent.<Transform>().localPosition.x=0.65;
 	 arm.GetComponent.<Transform>().localPosition.x=1.4;
 	 crosshair.GetComponent.<Transform>().localPosition.x=1.4;
 	 pwr.GetComponent.<RectTransform>().localPosition.x=5;
@@ -93,6 +85,14 @@ function FixedUpdate () {
 	}
 	if(Input.anyKey==false) {
 	 tekstura.GetComponent.<Animation>().Stop("legs");
+	 if(Shoot.isArmed==false) {
+	  if(cantJumpTimer>=1 && tekstura.GetComponent.<SpriteRenderer>().flipX==false){
+	   tekstura.GetComponent.<Animation>().Play("idleL");
+	  }
+	  if(cantJumpTimer>=1 && tekstura.GetComponent.<SpriteRenderer>().flipX==true){
+	   tekstura.GetComponent.<Animation>().Play("idleR");
+	  }
+	 }
 	}
 //skok
 	if(Input.GetKeyDown(KeyCode.Space) && grounded && cantJumpTimer>=1){
