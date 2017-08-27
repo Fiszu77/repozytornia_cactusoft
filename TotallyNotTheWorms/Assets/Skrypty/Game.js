@@ -15,6 +15,8 @@ static var won:int;//która drużyna wygrała
 
 var tColors:Color32[];//color paska życia drużyny
 
+var developMode:boolean;
+
 var tHpSliders:UnityEngine.UI.Slider[];//paski życia drużyn
 var turnTimerTxt:UnityEngine.UI.Text;//tekst zegara tury
 
@@ -91,6 +93,7 @@ function Update () {
 	 x=0;
 	}
 
+if(!developMode) {
 	if(t1Hp>=1) {
 	 if(t2Hp<=0) {
 	  won=1;
@@ -105,6 +108,7 @@ function Update () {
 	  Time.timeScale=0.5;
 	 }
 	}
+}
 
 }
 

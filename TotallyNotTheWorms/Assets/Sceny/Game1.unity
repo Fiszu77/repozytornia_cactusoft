@@ -4929,6 +4929,7 @@ MonoBehaviour:
     rgba: 4294049952
   - serializedVersion: 2
     rgba: 0
+  developMode: 1
   tHpSliders:
   - {fileID: 79188670}
   - {fileID: 225950869}
