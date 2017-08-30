@@ -1,17 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Game.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Rocket.js">
     <Files>
-      <File FileName="Assets\Skrypty\Shoot.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\Shoot.js" Line="62" Column="61" />
       <File FileName="Assets\Skrypty\Character.js" Line="1" Column="1" />
-      <File FileName="Assets\Skrypty\CharController.js" Line="1" Column="1" />
-      <File FileName="Assets\Skrypty\Game.js" Line="103" Column="9" />
+      <File FileName="Assets\Skrypty\CharController.js" Line="36" Column="53" />
+      <File FileName="Assets\Skrypty\Game.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Bomb.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\StickyB.js" Line="1" Column="1" />
-      <File FileName="Assets\Skrypty\Rocket.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\Rocket.js" Line="10" Column="43" />
       <File FileName="Assets\Skrypty\generator.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Generator2.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\EndScreen.js" Line="1" Column="1" />
+      <File FileName="Assets\plan.txt" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
