@@ -7,8 +7,6 @@ Project("{48C1B188-9551-6435-985D-58EB6207CA56}") = "TotallyNotTheWorms", "Assem
 EndProject
 Project("{48C1B188-9551-6435-985D-58EB6207CA56}") = "TotallyNotTheWorms", "Assembly-CSharp-Editor.csproj", "{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}"
 EndProject
-Project("{48C1B188-9551-6435-985D-58EB6207CA56}") = "TotallyNotTheWorms", "Assembly-UnityScript.unityproj", "{3B3EFB89-35F2-B554-A70E-7B4B535B40F9}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D7FB399-95D7-1FAA-8E26-5E3FE787A855}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B3EFB89-35F2-B554-A70E-7B4B535B40F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B3EFB89-35F2-B554-A70E-7B4B535B40F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B3EFB89-35F2-B554-A70E-7B4B535B40F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B3EFB89-35F2-B554-A70E-7B4B535B40F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

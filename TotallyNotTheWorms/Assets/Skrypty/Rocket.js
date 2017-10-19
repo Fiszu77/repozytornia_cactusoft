@@ -1,7 +1,13 @@
 ﻿#pragma strict
 var atomsCollided:Collider2D[];
 var radius:int;
+   
+function Update () {
 
+var angle : float = Mathf.Atan2(GetComponent.<Rigidbody2D>().velocity.y, GetComponent.<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg;
+print(angle);
+transform.eulerAngles.z= (angle+180);
+}
 function Boom () {
 	atomsCollided=Physics2D.OverlapCircleAll(transform.position,radius);
 	for(var i=0;i<atomsCollided.length;i++) {
