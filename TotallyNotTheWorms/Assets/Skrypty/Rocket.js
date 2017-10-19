@@ -4,8 +4,8 @@ var radius:int;
    
 function Update () {
 
-var angle : float = Mathf.Atan2(GetComponent.<Rigidbody2D>().velocity.y, GetComponent.<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg;
-print(angle);
+var angle : float = Mathf.Atan2(GetComponent.<Rigidbody2D>().velocity.y, GetComponent.<Rigidbody2D>().velocity.x) * Mathf.Rad2Deg;//obracanie pocisku rakiety
+//print(angle);
 transform.eulerAngles.z= (angle+180);
 }
 function Boom () {

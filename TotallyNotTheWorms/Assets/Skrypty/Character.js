@@ -119,6 +119,10 @@ function W4 () {
 	Shoot.weapon=4;
 	Armed();
 }
+function W5 () {
+	Shoot.weapon=5;
+	Armed();
+}
 //uzbrojony (broń została wybrana)
 function Armed () {
 	if(myTurn) {
