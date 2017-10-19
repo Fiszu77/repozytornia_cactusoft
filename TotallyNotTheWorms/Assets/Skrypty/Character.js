@@ -76,6 +76,9 @@ function Update () {
   kamera.SetActive(false);
  }
 //ustalanie punktów życia
+	if(hp<=0) {
+	 hp=0;
+	}
 	hpSlider.value=hp/100;
 //ustalanie koloru życia
 	if(hp>=50) {
@@ -97,26 +100,26 @@ function Update () {
 }
 //wybór broni
 function W0 () {
-	Shoot.weapon=0;
+	tekstura.GetComponent.<Shoot>().weapon=0;
 	Armed();
 }
 
 function W1 () {
-	Shoot.weapon=1;
+	tekstura.GetComponent.<Shoot>().weapon=1;
 	Armed();
 }
 
 function W2 () {
-	Shoot.weapon=2;
+	tekstura.GetComponent.<Shoot>().weapon=2;
 	Armed();
 }
 
 function W3 () {
-	Shoot.weapon=3;
+	tekstura.GetComponent.<Shoot>().weapon=3;
 	Armed();
 }
 function W4 () {
-	Shoot.weapon=4;
+	tekstura.GetComponent.<Shoot>().weapon=4;
 	Armed();
 }
 function W5 () {
@@ -126,8 +129,8 @@ function W5 () {
 //uzbrojony (broń została wybrana)
 function Armed () {
 	if(myTurn) {
-	 Shoot.isArmed=true;
-	 Shoot.head.transform.localRotation=Quaternion.Euler(0,0,30);
+	 tekstura.GetComponent.<Shoot>().isArmed=true;
+	 tekstura.GetComponent.<Shoot>().head.transform.localRotation=Quaternion.Euler(0,0,30);
 	 aiming[0].SetActive(true);
 	 aiming[1].SetActive(true);
 	 inv.SetActive(false);

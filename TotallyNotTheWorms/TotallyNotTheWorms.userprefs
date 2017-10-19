@@ -1,6 +1,21 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Banana.js">
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\EndScreen.js">
+    <Files>
+      <File FileName="Assets\Skrypty\Shoot.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\Character.js" Line="130" Column="9" />
+      <File FileName="Assets\Skrypty\CharController.js" Line="78" Column="6" />
+      <File FileName="Assets\Skrypty\Game.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\Bomb.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\StickyB.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\Rocket.js" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Rocket.js">
+>>>>>>> 111c9d71c9582858106e0c50792870c43034a91f
     <Files>
       <File FileName="Assets\Skrypty\Shoot.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Character.js" Line="1" Column="1" />
@@ -9,6 +24,7 @@
       <File FileName="Assets\Skrypty\StickyB.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Rocket.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\generator.js" Line="1" Column="1" />
+>>>>>>> 8b2b24734bc7d50ac5bbdb1fbfd2736e6a6830a9
       <File FileName="Assets\Skrypty\Generator2.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\EndScreen.js" Line="1" Column="1" />
       <File FileName="Assets\plan.txt" Line="1" Column="1" />
