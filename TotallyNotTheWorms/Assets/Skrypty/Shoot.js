@@ -13,7 +13,7 @@ var weapRend : GameObject;//broń trzymana w łapce
 var game : GameObject;//obiekt trzymający skrypt gry
 
 var isArmed : boolean;//czy broń jest wyciągnięta?
-static var weapon : int;//numer broni
+var weapon : int;//numer broni
 class Weapons{
 var name : String;
 var mn : int;//mnożnik siły
