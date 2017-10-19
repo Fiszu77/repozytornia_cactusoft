@@ -106,7 +106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &30295383
 Transform:
   m_ObjectHideFlags: 0
@@ -841,10 +841,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 222907664}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: -1}
   m_LocalPosition: {x: -0.5, y: -5, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359.99005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 360}
   m_Children: []
   m_Father: {fileID: 759837637}
   m_RootOrder: 1
@@ -2134,7 +2134,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 591635429}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.8, y: 106.4, z: 0}
+  m_LocalPosition: {x: 9.8, y: 84.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -212.75142}
   m_Children:
@@ -2521,10 +2521,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 759837636}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -359.99}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -360}
   m_Children:
   - {fileID: 201341764}
   - {fileID: 222907665}
@@ -2604,6 +2604,8 @@ MonoBehaviour:
   timer: 0
   weapRend: {fileID: 1830436146}
   game: {fileID: 1746055987}
+  isArmed: 0
+  weapon: 0
   tab:
   - name: Bomb
     mn: 60
@@ -4907,6 +4909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5383fc9bc3c7ed47b6b45ae6bd3218f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters: []
   teamTxts:
   - {fileID: 499362362}
   - {fileID: 926505869}
@@ -4915,11 +4918,12 @@ MonoBehaviour:
   endScreen: {fileID: 1094404801}
   turnTimer: 0
   lengthOfTurn: 30
-  teams: 2
+  teams: 1
   teamTurn: 1
   playerTurn: 1
   t1Hp: 0
   t2Hp: 0
+  x: 0
   tColors:
   - serializedVersion: 2
     rgba: 4278209279
@@ -5318,17 +5322,17 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1865879254
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1865879253}
-  m_LocalRotation: {x: 0, y: 0, z: 0.5, w: 0.8660254}
+  m_LocalRotation: {x: 0.008726225, y: 0.0151142655, z: 0.49992388, w: 0.86589354}
   m_LocalPosition: {x: -1.4, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60}
+  m_LocalEulerAnglesHint: {x: 0, y: 2, z: 60}
   m_Children:
   - {fileID: 30295383}
   m_Father: {fileID: 591635433}
@@ -5738,10 +5742,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2010782141}
-  m_LocalRotation: {x: 0, y: 0, z: 0.17364816, w: 0.9848078}
+  m_LocalRotation: {x: 0, y: 0, z: 0.17121556, w: 0.98523366}
   m_LocalPosition: {x: -1.4, y: 1.3, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 20}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.717001}
   m_Children:
   - {fileID: 1609694121}
   - {fileID: 1830436147}

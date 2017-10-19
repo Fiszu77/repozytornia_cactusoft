@@ -5,7 +5,7 @@ var radius:int;
 
 function Update () {
 	timer+=Time.deltaTime;
-	if(timer>=5) {
+	if(timer>=3) {
 	 Boom();
 	 timer=0;
 	}

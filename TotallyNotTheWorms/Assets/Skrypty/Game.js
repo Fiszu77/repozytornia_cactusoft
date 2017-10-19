@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-static var characters:GameObject[];
+var characters:GameObject[];
 var teamTxts:GameObject[];
 var endScreen:GameObject;
 
@@ -12,6 +12,7 @@ var playerTurn:int=1;//tura obecnego gracza obecnej tury
 var t1Hp:float;//ilość życia drużyny 1
 var t2Hp:float;
 static var won:int;//która drużyna wygrała
+var x:int;
 
 var tColors:Color32[];//color paska życia drużyny
 
@@ -30,6 +31,8 @@ function Start () {
 }
 
 function Update () {
+	t1Hp=0;
+	t2Hp=0;
 	turnTimer-=Time.deltaTime;
 	turnTimerTxt.text=""+Mathf.RoundToInt(turnTimer);
 
@@ -43,10 +46,10 @@ function Update () {
 	for(var i=0;i<characters.length;i++) {
 	 switch(characters[i].GetComponent.<Character>().team) {
 	  case 1:
-	   t1Hp=characters[i].GetComponent.<Character>().hp;
+	   t1Hp+=characters[i].GetComponent.<Character>().hp;
 	  break;
 	  case 2:
-	   t2Hp=characters[i].GetComponent.<Character>().hp;
+	   t2Hp+=characters[i].GetComponent.<Character>().hp;
 	  break;
 	 }
 	}
@@ -57,42 +60,49 @@ function Update () {
 	tHpSliders[1].value=t2Hp/400;
 //kiedy skończy się czas tury
 	if(turnTimer<=0) {
-	 var x:int;
 	 x++;
-	 for(var n=0;n<characters.length;n++) {//oddaj turę innemu nieświszukowi
-	  if(characters[n].GetComponent.<Character>().team==teamTurn) {
-	   if(characters[n].GetComponent.<Character>().player==playerTurn) {
-	    characters[n].BroadcastMessage("Reset");
-	    characters[n].GetComponent.<Character>().myTurn=false;
-	   }
-	  }
-	  if(teamTurn+1==teams+1) {
-	   if(characters[n].GetComponent.<Character>().team==1) {
-	    if(characters[n].GetComponent.<Character>().player==playerTurn) {
-	     characters[n].GetComponent.<Character>().myTurn=true;
-	    }
-	   }
-	  }
-	  else {
-	   if(characters[n].GetComponent.<Character>().team==teamTurn+1) {
-	    if(characters[n].GetComponent.<Character>().player==playerTurn) {
-	     characters[n].GetComponent.<Character>().myTurn=true;
-	    }
-	   }
-	  }
-	 }
 	 teamTurn++;
 	 if(teamTurn==teams+1) {
 	  teamTurn=1;
 	 }
+	 if(x==teams) {
+	  playerTurn++;
+	  x=0;
+	 }
+	 if(playerTurn>>2) {
+	  playerTurn=1;
+	 }
+	 for(var n=0;n<characters.length;n++) {//oddaj turę innemu nieświszukowi
+	  if(characters[n].GetComponent.<Character>().team==teamTurn) {
+	   if(characters[n].GetComponent.<Character>().player==playerTurn) {
+	    if(characters[n].activeInHierarchy) {
+	     characters[n].GetComponent.<Character>().myTurn=true;
+	    }
+	    else {
+	     var a:int=playerTurn+1;
+	     if(a==3) {
+	      a=1;
+	     }
+	     for(var b=0;b<characters.length;b++) {
+	      if(characters[b].GetComponent.<Character>().team==teamTurn) {
+	       if(characters[b].GetComponent.<Character>().player==a) {
+	        characters[b].GetComponent.<Character>().myTurn=true;
+	       }
+	      }
+	     }
+	    }
+	   }
+	  }
+	  if(characters[n].GetComponent.<Character>().team!=teamTurn) {
+	   characters[n].GetComponent.<Character>().myTurn=false;
+	   characters[n].BroadcastMessage("Reset");
+	  }
+	 }
 	 turnTimer=lengthOfTurn;
 	}
 
-	if(x==4) {
-	 playerTurn++;
-	 x=0;
-	}
 
+//tryb deweloperski (jeden nieświszczuk na scenie)
 if(!developMode) {
 	if(t1Hp>=1) {
 	 if(t2Hp<=0) {

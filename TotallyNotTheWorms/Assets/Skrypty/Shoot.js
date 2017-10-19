@@ -12,8 +12,8 @@ var timer : float;//czas trzymania-siła
 var weapRend : GameObject;//broń trzymana w łapce
 var game : GameObject;//obiekt trzymający skrypt gry
 
-static var isArmed : boolean;//czy broń jest wyciągnięta?
-static var weapon : int;//numer broni
+var isArmed : boolean;//czy broń jest wyciągnięta?
+var weapon : int;//numer broni
 class Weapons{
 var name : String;
 var mn : int;//mnożnik siły
@@ -28,17 +28,17 @@ function Start() {
 }
 
 function Update () {
-if(GetComponent.<SpriteRenderer>().flipX) {
-  // rotationVector.y = 0;
-   //transform.rotation = Quaternion.Euler(rotationVector);
+if(gameObject.transform.rotation.eulerAngles.y==180) {
+   //rotationVector.y = 0;
+   //transform.rotation = Quaternion.Euler(0,0,0);
    power.transform.rotation.eulerAngles.y=180;
    arm.transform.rotation.eulerAngles.y=180;
    head.transform.rotation.eulerAngles.y=180;
    pwr.transform.rotation.eulerAngles.y=180;
 }
-if(!GetComponent.<SpriteRenderer>().flipX) {
-//rotationVector.y = 180;
-   //transform.rotation = Quaternion.Euler(rotationVector);
+if(gameObject.transform.rotation.eulerAngles.y==0) {
+	//rotationVector.y = 180;
+    //transform.rotation = Quaternion.Euler(rotationVector);
     power.transform.rotation.eulerAngles.y=0;
     arm.transform.rotation.eulerAngles.y=0;
     head.transform.rotation.eulerAngles.y=0;
@@ -74,7 +74,7 @@ if(Input.GetKey(KeyCode.LeftControl)){
  }
  if (Input.GetKeyUp(KeyCode.E) && CharController.grounded || timer>=1) {
   clone=Instantiate(tab[weapon].weap,transform.position, Quaternion.identity);
-  if(GetComponent.<SpriteRenderer>().flipX) {
+  if(gameObject.transform.rotation.eulerAngles.y==180) {
 
    if (power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275) {
     clone.transform.Translate(3,1.3,0);
@@ -87,7 +87,7 @@ if(Input.GetKey(KeyCode.LeftControl)){
     clone.GetComponent.<Rigidbody2D>().AddForce(Vector2.up*((0-power.transform.eulerAngles.z)*tab[weapon].mn*timer));
    }
   }
-  if(!GetComponent.<SpriteRenderer>().flipX) {
+  if(gameObject.transform.rotation.eulerAngles.y==0) {
 
    if (power.transform.eulerAngles.z <360 && power.transform.eulerAngles.z > 275){
     clone.transform.Translate(-3,1.3,0);
