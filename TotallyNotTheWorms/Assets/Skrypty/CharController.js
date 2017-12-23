@@ -46,38 +46,24 @@ function FixedUpdate () {
 	}
 //ruch w lewo i prawo
 	if(Input.GetKey(KeyCode.A) && grounded &&backJumpT>0.9) {
-	//dostsowywanie elementów ciała nieświszczuka do kierunku ruchu
-	 //tekstura.GetComponent.<SpriteRenderer>().flipX=false;
-	 //legs[0].GetComponent.<SpriteRenderer>().flipX=false;
-	 //legs[1].GetComponent.<SpriteRenderer>().flipX=false;
-	 tekstura.GetComponent.<Transform>().rotation.y=0;
-	 //head.GetComponent.<Transform>().localPosition.x=-0.65;
-	 //arm.GetComponent.<Transform>().localPosition.x=-1.4;
+	 tekstura.GetComponent.<Transform>().eulerAngles.y=0;
 	 crosshair.GetComponent.<Transform>().localPosition.x=-1.4;
 	 pwr.GetComponent.<RectTransform>().localPosition.x=-5;
-	 //legs[0].GetComponent.<Transform>().localPosition.x=-0.5;
-	 //legs[1].GetComponent.<Transform>().localPosition.x=-0.5;
 	//fizyczny ruch
 	 transform.Translate(-speedOfMove,0,0*Time.deltaTime);
 	//animacje
+	 
 	 tekstura.GetComponent.<Animation>().Play("legs");
 	 if(!tekstura.GetComponent.<Shoot>().isArmed) {
-	  arm.GetComponent.<Animation>().Stop("jumpArmR");
+	  arm.GetComponent.<Animation>().Stop("jumpArm");
 	  arm.transform.eulerAngles.z=20;
 	 }
 	}
 
 	if(Input.GetKey(KeyCode.D) && grounded &&backJumpT>0.9) {
-	 //tekstura.GetComponent.<SpriteRenderer>().flipX=true;
-	 //legs[0].GetComponent.<SpriteRenderer>().flipX=true;
-	 //legs[1].GetComponent.<SpriteRenderer>().flipX=true;
-	 tekstura.GetComponent.<Transform>().rotation.y=180;
-	 //head.GetComponent.<Transform>().localPosition.x=0.65;
-	 //arm.GetComponent.<Transform>().localPosition.x=1.4;
+	 tekstura.GetComponent.<Transform>().eulerAngles.y=180;
 	 crosshair.GetComponent.<Transform>().localPosition.x=1.4;
 	 pwr.GetComponent.<RectTransform>().localPosition.x=5;
-	 //legs[0].GetComponent.<Transform>().localPosition.x=0.5;
-	 //legs[1].GetComponent.<Transform>().localPosition.x=0.5;
 	 transform.Translate(speedOfMove,0,0*Time.deltaTime);
 	 tekstura.GetComponent.<Animation>().Play("legs");
 	 if(!tekstura.GetComponent.<Shoot>().isArmed) {
@@ -85,16 +71,16 @@ function FixedUpdate () {
 	  arm.transform.eulerAngles.z=20;
 	 }
 	}
-	if(Input.anyKey==false) {
+	if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)) {
 	 tekstura.GetComponent.<Animation>().Stop("legs");
-	 /*if(tekstura.GetComponent.<Shoot>().isArmed==false) {
-	  if(cantJumpTimer>=1 && tekstura.GetComponent.<SpriteRenderer>().flipX==false){
+	 if(!tekstura.GetComponent.<Shoot>().isArmed) {
+	  if(cantJumpTimer>=1 && tekstura.transform.rotation.eulerAngles.y==180){
 	   tekstura.GetComponent.<Animation>().Play("idleL");
 	  }
-	  if(cantJumpTimer>=1 && tekstura.GetComponent.<SpriteRenderer>().flipX==true){
-	   tekstura.GetComponent.<Animation>().Play("idleR");
+	  if(cantJumpTimer>=1 && tekstura.transform.rotation.eulerAngles.y==0){
+	   tekstura.GetComponent.<Animation>().Play("idleL");
 	  }
-	 }*/
+	 }
 	}
 //skok
 	if(Input.GetKeyDown(KeyCode.Space) && grounded && cantJumpTimer>=1){
@@ -102,13 +88,13 @@ function FixedUpdate () {
 	 cantJumpTimer=0;
 	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*jumpForceUp);
 
-	 if(!tekstura.GetComponent.<SpriteRenderer>().flipX) { //jeśli jest odwrócony w lewo to skacz w lewo
+	 if(tekstura.transform.rotation.eulerAngles.y==0) { //jeśli jest odwrócony w prawo to skacz w prawo
 	  GetComponent.<Rigidbody2D>().AddForce(Vector2.left*jumpForceSide);
 	  arm.GetComponent.<Animation>().Play("jumpArm");
 	 }
-	 else { //jeśli nie to w prawo
+	 if(tekstura.transform.rotation.eulerAngles.y==180) { //jeśli nie to w lewo
 	  GetComponent.<Rigidbody2D>().AddForce(Vector2.right*jumpForceSide);
-	  arm.GetComponent.<Animation>().Play("jumpArmR");
+	  arm.GetComponent.<Animation>().Play("jumpArm");
 	 }
 	}
 //skok do tyłu
@@ -117,27 +103,22 @@ function FixedUpdate () {
 	 cantJumpTimer=0;
 	 isJump2=true;
 	 GetComponent.<Rigidbody2D>().AddForce(Vector2.up*jumpForceUp2);//najpierw w górę
-	 if(!tekstura.GetComponent.<SpriteRenderer>().flipX) {
-	  arm.GetComponent.<Animation>().Play("jumpArm");
-	 }
-	 else {
-	  arm.GetComponent.<Animation>().Play("jumpArmR");
-	 }
+	 arm.GetComponent.<Animation>().Play("jumpArm");
 	}
 
 	 if(jumpTimer>=0.8) {
-	  if(!tekstura.GetComponent.<SpriteRenderer>().flipX) { //następnie jeśli jest odwrócony w lewo to skacz w prawo
+	  if(tekstura.transform.rotation.eulerAngles.y==0) { //następnie jeśli jest odwrócony w lewo to skacz w prawo
 	   GetComponent.<Rigidbody2D>().AddForce(Vector2.right*jumpForceSide2);
 	   jumpTimer=0;
 	   isJump2=false;
-	   tekstura.GetComponent.<Animation>().Play("jumpr");
+	   tekstura.GetComponent.<Animation>().Play("jumpl");
 	   backJumpT=0;
 	  }
-	  else { //jeśli nie to w lewo
+	  if(tekstura.transform.rotation.eulerAngles.y==180) { //jeśli nie to w lewo
 	   GetComponent.<Rigidbody2D>().AddForce(Vector2.left*jumpForceSide2);
 	   jumpTimer=0;
 	   isJump2=false;
-	   tekstura.GetComponent.<Animation>().Play("jumpl");
+	   tekstura.GetComponent.<Animation>().Play("jumpr");
 	   backJumpT=0;
 	  }
 	}

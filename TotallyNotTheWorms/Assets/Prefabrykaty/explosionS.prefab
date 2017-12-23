@@ -506,7 +506,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 4
-    radius: 6
+    radius: 10
     angle: 25
     length: 5
     boxX: 1
@@ -527,7 +527,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 50
+      scalar: 1000
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1871,7 +1871,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 0.8
+      scalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1906,7 +1906,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 40
+      scalar: 80
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2243,7 +2243,7 @@ ParticleSystem:
       minMaxState: 0
     randomizeRotationDirection: 0
     gravityModifier: 0
-    maxNumParticles: 1000
+    maxNumParticles: 2000
     size3D: 0
     rotation3D: 0
   ShapeModule:
@@ -2271,7 +2271,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 40
+      scalar: 2000
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2309,7 +2309,7 @@ ParticleSystem:
     cnt1: 30
     cnt2: 30
     cnt3: 30
-    cntmax0: 100
+    cntmax0: 1000
     cntmax1: 30
     cntmax2: 30
     cntmax3: 30

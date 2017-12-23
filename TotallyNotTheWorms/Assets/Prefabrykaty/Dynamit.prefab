@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   atomsCollided: []
+  expl: {fileID: 1000011582323324, guid: ca82e52592dd8454e80846ae11a3bcfd, type: 2}
   radius: 22
 --- !u!198 &198000012701311926
 ParticleSystem:

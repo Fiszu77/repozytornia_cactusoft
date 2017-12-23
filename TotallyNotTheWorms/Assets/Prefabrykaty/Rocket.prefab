@@ -87,6 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atomsCollided: []
   radius: 16
+  expl: {fileID: 1000011582323324, guid: ca82e52592dd8454e80846ae11a3bcfd, type: 2}
 --- !u!212 &212000012002719582
 SpriteRenderer:
   m_ObjectHideFlags: 1

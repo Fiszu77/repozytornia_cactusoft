@@ -7,9 +7,12 @@ var kamera:GameObject;
 var hat:GameObject;
 var tekstura:GameObject;
 var head:GameObject;
+var charName:UnityEngine.UI.Text;
 private var clone:GameObject;
 
 var hats:Sprite[];
+var teamColors:Color32[];
+var names:String[];
 
 var hp:float=100;
 var c:int;
@@ -27,6 +30,9 @@ function Start() {
 //losowanie kapelusza
 	var h=Random.Range(0,3);
 	hat.GetComponent.<SpriteRenderer>().sprite=hats[h];
+	charName.color=teamColors[team];
+	h=Random.Range(0,10);
+	charName.text=names[h];
 }
 
 function Update () {
@@ -123,7 +129,7 @@ function W4 () {
 	Armed();
 }
 function W5 () {
-	Shoot.weapon=5;
+	tekstura.GetComponent.<Shoot>().weapon=5;
 	Armed();
 }
 //uzbrojony (broń została wybrana)

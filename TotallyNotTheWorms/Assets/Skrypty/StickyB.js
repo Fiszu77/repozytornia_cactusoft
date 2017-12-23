@@ -1,6 +1,7 @@
 ﻿#pragma strict
 var timer:float;
 var atomsCollided:Collider2D[];
+var expl:GameObject;
 var radius:int;
 
 function Update () {
@@ -27,6 +28,7 @@ function Boom () {
 	  atomsCollided[i].gameObject.GetComponent.<Rigidbody2D>().AddForce(gameObject.transform.position-atomsCollided[i].gameObject.transform.position*knockback);
 	 }
 	}
+	Instantiate(expl,transform.position,Quaternion.identity);
 	Destroy(gameObject);
 }
 
