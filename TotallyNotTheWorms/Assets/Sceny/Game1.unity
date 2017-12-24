@@ -2767,24 +2767,24 @@ MonoBehaviour:
   - serializedVersion: 2
     rgba: 4294902015
   - serializedVersion: 2
-    rgba: 4278209279
-  - serializedVersion: 2
     rgba: 4278250495
   - serializedVersion: 2
     rgba: 4294049952
   - serializedVersion: 2
     rgba: 4294967040
+  - serializedVersion: 2
+    rgba: 4278222064
   names:
-  - Adam
+  - Adamow
   - Jurek
-  - "Jaros\u0142aw"
+  - Jarko
   - Krzychu
-  - Andrzej
+  - Andrew
   - "Zdzis\u0142aw"
   - Wojtas
   - Pan Kwiatkowski
   - Filipcio
-  - Dariusz
+  - Czarniecki
   hp: 100
   c: 0
   team: 1
@@ -5477,13 +5477,13 @@ MonoBehaviour:
   - serializedVersion: 2
     rgba: 4294902015
   - serializedVersion: 2
-    rgba: 4278209279
-  - serializedVersion: 2
     rgba: 4278250495
   - serializedVersion: 2
     rgba: 4294049952
   - serializedVersion: 2
     rgba: 4294967040
+  - serializedVersion: 2
+    rgba: 4278222064
   names:
   - Adam
   - Jurek
@@ -7512,15 +7512,15 @@ MonoBehaviour:
   x: 0
   tColors:
   - serializedVersion: 2
-    rgba: 4294902015
-  - serializedVersion: 2
-    rgba: 4278209279
+    rgba: 4278207743
   - serializedVersion: 2
     rgba: 4278250495
   - serializedVersion: 2
     rgba: 4294049952
   - serializedVersion: 2
     rgba: 4294967040
+  - serializedVersion: 2
+    rgba: 4278222064
   developMode: 0
   tHpSliders:
   - {fileID: 79188670}

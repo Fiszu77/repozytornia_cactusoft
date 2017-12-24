@@ -69,7 +69,7 @@ function Update () {
 	  playerTurn++;
 	  x=0;
 	 }
-	 if(playerTurn>>2) {
+	 if(playerTurn>=2) {
 	  playerTurn=1;
 	 }
 	 for(var n=0;n<characters.length;n++) {//oddaj turę innemu nieświszukowi

@@ -8,7 +8,6 @@ var arm : GameObject;
 var crosshair : GameObject;
 var pwr : GameObject;
 var tekstura : GameObject;
-var head : GameObject;
 
 var ground_layers :LayerMask;
 
@@ -71,7 +70,7 @@ function FixedUpdate () {
 	  arm.transform.eulerAngles.z=20;
 	 }
 	}
-	if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D)) {
+	if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) || !gameObject.GetComponent.<Character>().myTurn) {
 	 tekstura.GetComponent.<Animation>().Stop("legs");
 	 if(!tekstura.GetComponent.<Shoot>().isArmed) {
 	  if(cantJumpTimer>=1 && tekstura.transform.rotation.eulerAngles.y==180){
