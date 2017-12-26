@@ -26,10 +26,14 @@ var hpColor:UnityEngine.UI.Image;
 
 var mowa:AudioClip[];
 
+var str:float;
+
 function Start() {
+str=Time.time;
 //losowanie kapelusza
 	var h=Random.Range(0,3);
 	hat.GetComponent.<SpriteRenderer>().sprite=hats[h];
+//losowanie imienia
 	charName.color=teamColors[team];
 	h=Random.Range(0,10);
 	charName.text=names[h];
@@ -63,10 +67,10 @@ function Update () {
 //zoom
 	if(kamera.GetComponent.<Camera>().orthographicSize>=10 && kamera.GetComponent.<Camera>().orthographicSize<=55) {
 	 if(Input.GetAxis("Mouse ScrollWheel")>0) {
-	  kamera.GetComponent.<Camera>().orthographicSize-=2;
+	  kamera.GetComponent.<Camera>().orthographicSize-=5;
 	 }
 	 if(Input.GetAxis("Mouse ScrollWheel")<0) {
-	  kamera.GetComponent.<Camera>().orthographicSize+=2;
+	  kamera.GetComponent.<Camera>().orthographicSize+=5;
 	 }
 	}
 	if(kamera.GetComponent.<Camera>().orthographicSize<10) {

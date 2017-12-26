@@ -1,46 +1,27 @@
 ﻿#pragma strict
 import UnityEngine.SceneManagement;
 var exit:boolean=false;
-var normal:boolean=false;
+var openWindow:boolean=false;
 var toggle:boolean=false;
 var load:boolean=false;
-var fi:GameObject;
-var fi2:GameObject;
-var se:GameObject;
-var th:GameObject;
-var fo:GameObject;
-var play:GameObject;
-var playb:UnityEngine.UI.Button;
-var ptext:GameObject;
-var script:Menu;
-var s:String;
+var scene:String;
+var windowToOpen:GameObject;
+var windows:GameObject[];
 
 function Click () {
-	if(exit==true) {
+	if(exit) {
 	 Application.Quit();
 	}
-	if(normal==true) {
-	 if(fi.activeInHierarchy==false) {
-	  fi.SetActive(true);
-	  fi2.SetActive(true);
-	 }
-	 if(se.activeInHierarchy==true) {
-	  se.SetActive(false);
-	 }
-	 if(th.activeInHierarchy==true) {
-	  th.SetActive(false);
-	 }
-	 if(fo.activeInHierarchy==true) {
-	  fo.SetActive(false);
-	 }
+
+	if(openWindow) {
+		/*windows=GameObject.FindGameObjectsWithTag("window");
+		for(var i:int;i>=windows.length;i++) {
+			windows[i].SetActive(false);
+		}*/
+		windowToOpen.SetActive(true);
 	}
-	if(toggle==true) {
-	  playb.interactable=true;
-	  ptext.SetActive(true);
-	  script=play.GetComponent(Menu);
-	  script.s=s;
-	}
-	if(load==true) {
-	 SceneManager.LoadScene(s);
+
+	if(load) {
+	 SceneManager.LoadScene(scene);
 	}
 }

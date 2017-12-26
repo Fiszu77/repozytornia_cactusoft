@@ -7,6 +7,7 @@ TagManager:
   - atom
   - bomb
   - "ko\u0144czyna"
+  - window
   layers:
   - Default
   - TransparentFX
