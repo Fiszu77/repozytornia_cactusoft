@@ -26,12 +26,9 @@ var hpColor:UnityEngine.UI.Image;
 
 var mowa:AudioClip[];
 
-var str:float;
-
 function Start() {
-str=Time.time;
 //losowanie kapelusza
-	var h=Random.Range(0,3);
+	var h=Random.Range(0,hats.Length);
 	hat.GetComponent.<SpriteRenderer>().sprite=hats[h];
 //losowanie imienia
 	charName.color=teamColors[team];
@@ -39,7 +36,7 @@ str=Time.time;
 	charName.text=names[h];
 }
 
-function Update () {
+function FixedUpdate () {
  if(myTurn) {
   gameObject.GetComponent.<CharController>().enabled=true;
   tekstura.GetComponent.<Shoot>().enabled=true;
@@ -73,8 +70,8 @@ function Update () {
 	  kamera.GetComponent.<Camera>().orthographicSize+=5;
 	 }
 	}
-	if(kamera.GetComponent.<Camera>().orthographicSize<10) {
-	 kamera.GetComponent.<Camera>().orthographicSize=10;
+	if(kamera.GetComponent.<Camera>().orthographicSize<25) {
+	 kamera.GetComponent.<Camera>().orthographicSize=25;
 	}
 	if(kamera.GetComponent.<Camera>().orthographicSize>55) {
 	 kamera.GetComponent.<Camera>().orthographicSize=55;

@@ -37,11 +37,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010722067300}
   - 212: {fileID: 212000010301095108}
+  - 58: {fileID: 58000010748234946}
   - 50: {fileID: 50000013859144648}
-  - 114: {fileID: 114000012827960066}
-  - 60: {fileID: 60000010770986970}
+  - 114: {fileID: 114000012527822166}
   m_Layer: 0
-  m_Name: Banana
+  m_Name: Smallbanana
   m_TagString: bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1000013218039962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -33.657383, y: 13.650532, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012575673240}
@@ -91,68 +91,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60000010770986970
-PolygonCollider2D:
+--- !u!58 &58000010748234946
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013218039962}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 1afedbdca97030a4d9ca1042dfa91d5c, type: 2}
+  m_Material: {fileID: 6200000, guid: 72e3654338e6e5b4a8a058b2e35b0176, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 0.79999995, y: -1.035}
-      - {x: 0.71, y: -0.91499996}
-      - {x: 0.53999996, y: -0.695}
-      - {x: 0.39999998, y: -0.48499998}
-      - {x: 0.28, y: -0.295}
-      - {x: 0.19999999, y: -0.145}
-      - {x: 0.06, y: 0.16499999}
-      - {x: 0.07, y: 0.235}
-      - {x: 0.049999997, y: 0.505}
-      - {x: 0.049999997, y: 0.72499996}
-      - {x: 0.08, y: 0.865}
-      - {x: 0.099999994, y: 1.015}
-      - {x: 0.17, y: 1.125}
-      - {x: 0.26, y: 1.3149999}
-      - {x: 0.35, y: 1.385}
-      - {x: 0.42999998, y: 1.475}
-      - {x: 0.48999998, y: 1.555}
-      - {x: 0.65, y: 1.625}
-      - {x: 0.66999996, y: 1.655}
-      - {x: 0.66999996, y: 1.785}
-      - {x: 0.59, y: 1.8449999}
-      - {x: 0.44, y: 1.8449999}
-      - {x: 0.31, y: 1.795}
-      - {x: 0.21, y: 1.745}
-      - {x: 0.099999994, y: 1.735}
-      - {x: -0.17, y: 1.615}
-      - {x: -0.41, y: 1.4449999}
-      - {x: -0.7, y: 1.185}
-      - {x: -0.75, y: 1.105}
-      - {x: -0.87, y: 0.805}
-      - {x: -0.89, y: 0.72499996}
-      - {x: -0.89, y: 0.515}
-      - {x: -0.84999996, y: 0.265}
-      - {x: -0.79999995, y: 0.044999998}
-      - {x: -0.74, y: -0.095}
-      - {x: -0.66999996, y: -0.24499999}
-      - {x: -0.47, y: -0.505}
-      - {x: -0.22999999, y: -0.72499996}
-      - {x: -0.08, y: -0.865}
-      - {x: 0.02, y: -0.965}
-      - {x: 0.19999999, y: -1.095}
-      - {x: 0.35, y: -1.185}
-      - {x: 0.42999998, y: -1.2049999}
-      - {x: 0.53, y: -1.2049999}
-      - {x: 0.63, y: -1.1949999}
-      - {x: 0.75, y: -1.135}
-      - {x: 0.79999995, y: -1.0849999}
---- !u!114 &114000012827960066
+  m_Offset: {x: -0, y: 0.2}
+  serializedVersion: 2
+  m_Radius: 1
+--- !u!114 &114000012527822166
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -160,16 +113,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013218039962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dbb4874fc265d64496c209d0e4d5214, type: 3}
+  m_Script: {fileID: 11500000, guid: 4cc413966e7237041b3733441024a80f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 0
+  timer: 2
   atomsCollided: []
   expl: {fileID: 1000011582323324, guid: ca82e52592dd8454e80846ae11a3bcfd, type: 2}
-  radius: 14
+  radius: 10
   bombType: 0
-  smallban: {fileID: 50000013859144648, guid: 7e42683ff496c764e9e619f6f7cc2d35, type: 2}
-  force: 500
 --- !u!198 &198000010008132442
 ParticleSystem:
   m_ObjectHideFlags: 1

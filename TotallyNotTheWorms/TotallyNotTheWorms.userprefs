@@ -1,15 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Character.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Skrypty\Generator2.js">
     <Files>
       <File FileName="Assets\Skrypty\Shoot.js" Line="1" Column="1" />
-      <File FileName="Assets\Skrypty\Character.js" Line="73" Column="52" />
+      <File FileName="Assets\Skrypty\Character.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\CharController.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Bomb.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Rocket.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\StickyB.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\Game.js" Line="1" Column="1" />
       <File FileName="Assets\Skrypty\EndScreen.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\Banana.js" Line="1" Column="1" />
+      <File FileName="Assets\Skrypty\Generator2.js" Line="112" Column="62" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

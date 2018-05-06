@@ -771,7 +771,7 @@ GameObject:
   - 222: {fileID: 912023221}
   - 114: {fileID: 912023220}
   m_Layer: 5
-  m_Name: Text
+  m_Name: version
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -827,7 +827,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "version alpha0.5.1 Cactusoft\xA9 Entertainment"
+  m_Text: "version alpha0.5.1 Cactusoft\xAE Entertainment"
 --- !u!222 &912023221
 CanvasRenderer:
   m_ObjectHideFlags: 0
