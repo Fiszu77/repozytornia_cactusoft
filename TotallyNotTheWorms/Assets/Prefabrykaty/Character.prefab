@@ -1789,10 +1789,12 @@ MonoBehaviour:
   - Pan Kwiatkowski
   - Filipcio
   - Czarniecki
+  - Mr. Blue Sky
+  - Stefan
   hp: 100
   c: 0
   team: 2
-  player: 2
+  player: 3
   myTurn: 0
   hpSlider: {fileID: 114000012370433584}
   hpColor: {fileID: 114000013328133544}

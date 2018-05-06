@@ -133,6 +133,10 @@ function W5 () {
 	tekstura.GetComponent.<Shoot>().weapon=5;
 	Armed();
 }
+function W6 () {
+	tekstura.GetComponent.<Shoot>().weapon=6;
+	Armed();
+}
 //uzbrojony (broń została wybrana)
 function Armed () {
 	if(myTurn) {

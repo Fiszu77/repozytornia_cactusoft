@@ -19,7 +19,7 @@ var y:int; //obecna wysokość
 var x:int; //obecna szerokość
 var r2:int; //głebokość od której zaczyna się ziemia
 var r1:int; //głębokość od której zaczyna się kamień (licząc od ziemii)
-var numberOfPlayers:int; //liczba nieświszczuków do zespawnowania
+var numberOfTeams:int; //liczba nieświszczuków do zespawnowania
 
 function Start () {
 	seed=Random.Range(-1000.0,1000.0);
@@ -108,16 +108,21 @@ function GenerateCave () {
 }
 
 function Spawn () {
-	var a:int=0; //ilość zespawnowanych nieświszczuków
-	for(x=0; x<=width && a<numberOfPlayers; x+=Random.Range(4,10)*2.5) { //jeśli liczba obecnych na mapie nieświszczuków nie przekracza docelowej
-	 y=Random.Range(10,multiplier/2); //losowa wysokość spawnu nieświszczuka
-	 if(!Physics2D.OverlapArea(Vector2((x-2)*2.5,(y+3)*2.5),Vector2((x+2)*2.5,(y-3)*2.5))) { //jeśli nie ma atomów w miejscu spawnu
-	  Instantiate(player, Vector2(x*2.5,y*2.5), Quaternion.identity);
-	  a++;
+	var a:int=1; //ilość zespawnowanych w drużynie nieświszczuków
+	for(var i=1; i<=numberOfTeams; i++) {
+	 for(x=0; x<=width && a<=4; x+=Random.Range(4,10)*2.5) { //jeśli liczba obecnych na mapie nieświszczuków nie przekracza docelowej
+	  y=Random.Range(10,multiplier/2); //losowa wysokość spawnu nieświszczuka
+	  if(!Physics2D.OverlapArea(Vector2((x-2)*2.5,(y+3)*2.5),Vector2((x+2)*2.5,(y-3)*2.5))) { //jeśli nie ma atomów w miejscu spawnu
+	   player.GetComponent.<Character>().team=i; //nadaj obecnie spawnującemu nieświszczukowi odpowiedni numer drużyny
+	   player.GetComponent.<Character>().player=a; //nadaj obecnie spawnującemu nieświszczukowi odpowiedni numer gracza w drużynie
+	   Instantiate(player, Vector2(x*2.5,y*2.5), Quaternion.identity);
+	   a++;
+	  }
+	  if(x>width-10) {
+	   x=0;
+	  }
 	 }
-	 if(x>width-10) {
-	  x=0;
-	 }
+	 a=1;
 	}
 }
 
